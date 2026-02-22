@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─────────────────────────────── */
+:root {
+  --navy-950: #020817;
+  --navy-900: #0a0f1e;
+  --navy-800: #0d1528;
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.35);
+  --accent: #818cf8;
+  --accent-cyan: #22d3ee;
+  --glass-bg: rgba(255, 255, 255, 0.055);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glass-hover: rgba(255, 255, 255, 0.10);
+  --radius-card: 1.5rem;
+  --radius-xl: 2.5rem;
+}
+
+/* ─── Base ─────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans antialiased;
+  background: var(--navy-950);
+  color: #f1f5f9;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ─── Glassmorphism ─────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.glass-dark {
+  background: rgba(2, 8, 23, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-hover {
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.glass-hover:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 40px rgba(59, 130, 246, 0.15);
+}
+
+/* ─── Glow Effects ─────────────────────────────── */
+.glow-blue {
+  box-shadow: 0 0 30px var(--primary-glow), 0 0 80px rgba(59, 130, 246, 0.15);
+}
+
+.glow-accent {
+  box-shadow: 0 0 30px rgba(129, 140, 248, 0.4), 0 0 80px rgba(129, 140, 248, 0.15);
+}
+
+.text-glow {
+  text-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3);
+}
+
+.text-glow-accent {
+  text-shadow: 0 0 30px rgba(129, 140, 248, 0.6);
+}
+
+/* ─── Gradient Text ────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #fbbf24 0%, #f472b6 50%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Orbs / Background decoration ────────────── */
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.orb-blue {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, transparent 70%);
+}
+
+.orb-indigo {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+}
+
+.orb-cyan {
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.25) 0%, transparent 70%);
+}
+
+.orb-pink {
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.25) 0%, transparent 70%);
+}
+
+/* ─── Page Layout ───────────────────────────────── */
+.page-bg {
+  background: var(--navy-950);
+  position: relative;
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8;
+}
+
+/* ─── Cards ─────────────────────────────────────── */
+.card {
+  @apply glass rounded-[1.5rem] p-6 transition-all duration-300;
+}
+
+.card:hover {
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
+}
+
+/* ─── Buttons ───────────────────────────────────── */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-7 py-3.5 rounded-2xl font-bold text-white transition-all duration-300;
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.35);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.55);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-ghost {
+  @apply glass glass-hover inline-flex items-center justify-center px-7 py-3.5 rounded-2xl font-semibold text-white/80 transition-all duration-300;
+}
+
+/* ─── Input fields ───────────────────────────────── */
+.input-glass {
+  @apply glass w-full px-4 py-3 rounded-xl text-white placeholder-white/30 outline-none transition-all duration-300;
+}
+
+.input-glass:focus {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ─── Badge / pill ───────────────────────────────── */
+.badge {
+  @apply inline-flex items-center space-x-1.5 glass px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest text-blue-300;
+}
+
+/* ─── Progress bar ─────────────────────────────── */
+.progress-track {
+  @apply w-full h-3 rounded-full overflow-hidden;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.progress-fill {
+  @apply h-full rounded-full relative overflow-hidden;
+  background: linear-gradient(90deg, #3b82f6, #6366f1, #22d3ee);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  animation: shimmer 2s infinite;
+  background-size: 200% 100%;
+}
+
+/* ─── Live dot ───────────────────────────────────── */
+.live-dot {
+  @apply w-2 h-2 bg-red-500 rounded-full;
+  animation: pulseGlow 1.5s ease-in-out infinite;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6);
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6);
+    opacity: 1;
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+    opacity: 0.7;
+  }
+}
+
+/* ─── Divider ────────────────────────────────────── */
+.divider {
+  @apply w-full h-px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
+/* ─── Noise texture overlay ─────────────────────── */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+/* ─── Scrollbar hide ─────────────────────────────── */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─── Star field ─────────────────────────────────── */
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 10%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 50% 60%, rgba(255, 255, 255, 0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 80%, rgba(255, 255, 255, 0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 10% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 20%, rgba(255, 255, 255, 0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 90%, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  pointer-events: none;
+}
