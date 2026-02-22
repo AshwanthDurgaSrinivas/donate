@@ -230,7 +230,7 @@ const GiggleZen = () => {
                 </div>
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <motion.a
-                        href="https://www.instagram.com/giggterrzen/"
+                        href="https://www.instagram.com/gigglezen_/"
                         target="_blank" rel="noreferrer"
                         whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(236,72,153,0.4)' }}
                         whileTap={{ scale: 0.97 }}
@@ -238,7 +238,7 @@ const GiggleZen = () => {
                         style={{ background: 'linear-gradient(135deg,#f97316,#ec4899,#8b5cf6)', boxShadow: '0 8px 30px rgba(236,72,153,0.3)' }}
                     >
                         <Instagram className="w-5 h-5" />
-                        <span>Follow @giggterrzen on Instagram</span>
+                        <span>Follow @gigglezen on Instagram</span>
                         <ExternalLink className="w-4 h-4" />
                     </motion.a>
                     <motion.a
