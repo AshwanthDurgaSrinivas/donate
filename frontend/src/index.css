@@ -27,6 +27,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -35,6 +37,8 @@ body {
   color: #f1f5f9;
   min-height: 100vh;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* ─── Scrollbar ─────────────────────────────────── */
@@ -151,7 +155,7 @@ body {
 }
 
 .section-container {
-  @apply max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8;
+  @apply max-w-7xl mx-auto px-4 py-12 sm:py-16 lg:py-20 sm:px-6 lg:px-8;
 }
 
 /* ─── Cards ─────────────────────────────────────── */

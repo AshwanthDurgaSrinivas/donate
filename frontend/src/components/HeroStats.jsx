@@ -5,7 +5,7 @@ import { ShieldCheck, Heart, User, Mail, Crown } from 'lucide-react';
 import { useRealtimeStats } from '../hooks/useRealtimeStats';
 import { useSound } from '../hooks/useSound';
 import { fireConfetti } from './ConfettiEffect';
-const heroImg = new URL('../assets/hero.png', import.meta.url).href;
+
 
 const PRESETS = [100, 500, 1000, 5000, 10000, 50000];
 
@@ -132,11 +132,6 @@ const HeroStats = () => {
                             </div>
                         </motion.div>
 
-                        {/* Hero image — visible on mobile below form */}
-                        <motion.div variants={fadeUp} className="lg:hidden relative rounded-2xl overflow-hidden border border-white/10 shadow-card max-w-sm">
-                            <img src={heroImg} alt="Punarvika" className="w-full object-cover" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 to-transparent" />
-                        </motion.div>
                     </motion.div>
 
                     {/* ── RIGHT — Compact Donate Form ───────────── */}

@@ -27,7 +27,7 @@ function App() {
     }, [location.pathname]);
 
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col overflow-x-hidden" style={{ background: 'var(--navy-950)' }}>
             {/* Route-change progress bar */}
             <AnimatePresence>
                 {loading && (
@@ -44,7 +44,7 @@ function App() {
             </AnimatePresence>
 
             {!isAdmin && <Navbar />}
-            <main className="flex-grow">
+            <main className="flex-grow overflow-x-hidden w-full">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={location.pathname}
