@@ -47,10 +47,13 @@ router.get('/stats', async (req, res) => {
 // Daily Donation Chart Data (Guaranteed to be from DB)
 router.get('/daily-stats', async (req, res) => {
     try {
+        const days = parseInt(req.query.days) || 7;
+        const interval = `${days - 1} days`;
+
         const result = await db.query(`
             WITH days AS (
                 SELECT generate_series(
-                    CURRENT_DATE - INTERVAL '6 days',
+                    CURRENT_DATE - INTERVAL '${interval}',
                     CURRENT_DATE,
                     '1 day'::interval
                 )::date AS day_date

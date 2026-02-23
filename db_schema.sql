@@ -21,15 +21,27 @@ CREATE TABLE stats (
   id INT PRIMARY KEY DEFAULT 1,
   total_raised NUMERIC(20, 2) DEFAULT 0,
   total_donors INT DEFAULT 0,
+  websites_sold INT DEFAULT 0,
   target_amount NUMERIC(20, 2) DEFAULT 160000000,
   last_updated TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   CONSTRAINT single_row CHECK (id = 1)
 );
 
 -- Initialize stats row
-INSERT INTO stats (id, total_raised, total_donors, target_amount) 
-VALUES (1, 0, 0, 160000000)
+INSERT INTO stats (id, total_raised, total_donors, websites_sold, target_amount) 
+VALUES (1, 0, 0, 0, 160000000)
 ON CONFLICT (id) DO NOTHING;
+
+-- Website leads table
+CREATE TABLE IF NOT EXISTS website_leads (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    mobile TEXT NOT NULL,
+    email TEXT NOT NULL,
+    message TEXT,
+    status TEXT DEFAULT 'pending',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
 
 -- Documents table
 CREATE TABLE documents (

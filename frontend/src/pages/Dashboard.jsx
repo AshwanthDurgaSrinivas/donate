@@ -8,10 +8,11 @@ const Dashboard = () => {
     const stats = useRealtimeStats();
     const [dailyData, setDailyData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [range, setRange] = useState(7); // Default to 7 days
 
     const fetchDailyStats = async () => {
         try {
-            const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/donors/daily-stats`);
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/donors/daily-stats?days=${range}`);
             setDailyData(res.data);
         } catch (error) {
             console.error("Error fetching daily stats:", error);
@@ -25,7 +26,7 @@ const Dashboard = () => {
         // Refresh chart every 5 minutes
         const interval = setInterval(fetchDailyStats, 5 * 60 * 1000);
         return () => clearInterval(interval);
-    }, []);
+    }, [range]);
 
     const chartData = dailyData;
     const maxVal = Math.max(...chartData.map(d => Number(d.total)), 1);
@@ -48,13 +49,22 @@ const Dashboard = () => {
                 />
 
                 <div className="mt-12 bg-white p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
-                    <div className="flex justify-between items-center mb-10">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
                         <div>
                             <h3 className="text-2xl font-bold text-gray-900">Donation Momentum</h3>
-                            <p className="text-gray-500 font-medium">Last 7 days performance</p>
+                            <p className="text-gray-500 font-medium">Tracking performance over the selected period</p>
                         </div>
-                        <div className="flex items-center space-x-4 text-xs font-bold uppercase tracking-widest text-gray-400">
-                            <span className="flex items-center"><div className="w-3 h-3 bg-primary rounded-full mr-2"></div> Success</span>
+                        <div className="flex items-center bg-gray-50 p-1.5 rounded-2xl border border-gray-100">
+                            {[7, 15, 30].map((r) => (
+                                <button
+                                    key={r}
+                                    onClick={() => setRange(r)}
+                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${range === r ? 'bg-white text-primary shadow-sm' : 'text-gray-400 hover:text-gray-600'
+                                        }`}
+                                >
+                                    {r} Days
+                                </button>
+                            ))}
                         </div>
                     </div>
 

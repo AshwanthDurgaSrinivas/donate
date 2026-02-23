@@ -27,14 +27,17 @@ const DonationForm = () => {
                 amount: amt,
                 donorInfo: { name: formData.name, email: formData.email, phone: formData.phone, city: formData.city, isAnonymous: formData.isAnonymous }
             });
-            const cashfree = window.Cashfree({ mode: import.meta.env.VITE_CASHFREE_MODE || 'sandbox' });
+            const mode = import.meta.env.VITE_CASHFREE_MODE || 'sandbox';
+            console.log("Initializing Cashfree in mode:", mode);
+            const cashfree = window.Cashfree({ mode });
             cashfree.checkout({
                 paymentSessionId: res.data.payment_session_id,
                 returnUrl: `${window.location.origin}/thank-you?order_id=${res.data.order_id}`,
             });
         } catch (err) {
             console.error(err);
-            alert('Error initializing payment. Please try again.');
+            const detail = err.response?.data?.details || err.response?.data?.error || err.message || 'Unknown error';
+            alert(`Payment Error: ${typeof detail === 'object' ? JSON.stringify(detail) : detail}`);
         } finally {
             setLoading(false);
         }
@@ -122,8 +125,8 @@ const DonationForm = () => {
                                                 whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.93 }}
                                                 onClick={() => { playClick(); setFormData({ ...formData, amount: p.toString() }); }}
                                                 className={`py-2.5 rounded-xl text-sm font-bold transition-all border ${formData.amount === p.toString()
-                                                        ? 'border-primary bg-primary/20 text-primary glow-blue'
-                                                        : 'glass border-white/08 text-white/50 hover:border-primary/40 hover:text-white/80'
+                                                    ? 'border-primary bg-primary/20 text-primary glow-blue'
+                                                    : 'glass border-white/08 text-white/50 hover:border-primary/40 hover:text-white/80'
                                                     }`}>
                                                 ₹{p >= 1000 ? `${p / 1000}K` : p}
                                             </motion.button>

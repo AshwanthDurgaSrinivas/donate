@@ -27,24 +27,24 @@ const Navbar = () => {
                 initial={{ y: -80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass-dark border-b border-white/05 shadow-card' : 'bg-transparent'
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || location.pathname !== '/' ? 'glass-dark border-b border-white/10 shadow-xl py-0' : 'bg-transparent py-2'
                     }`}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-16">
+                    <div className="flex items-center justify-between h-20">
                         {/* Logo */}
-                        <Link to="/" className="flex items-center space-x-2.5 group">
+                        <Link to="/" className="flex items-center space-x-3 group">
                             <motion.div
-                                whileHover={{ rotate: [0, -10, 10, 0] }}
+                                whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                                 transition={{ duration: 0.5 }}
-                                className="w-9 h-9 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0"
-                                style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)' }}
+                                className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0"
+                                style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)', boxShadow: '0 8px 20px rgba(59, 130, 246, 0.4)' }}
                             >
-                                <Heart className="w-4 h-4 text-white" fill="currentColor" />
+                                <Heart className="w-5 h-5 text-white" fill="currentColor" />
                             </motion.div>
-                            <div className="flex flex-col leading-none">
-                                <span className="font-black text-lg text-white tracking-tight">punarvika</span>
-                                <span className="text-[9px] text-white/35 font-medium tracking-tight leading-tight">collecting funds by GiggleZen Technologies Pvt. Ltd.</span>
+                            <div className="flex flex-col">
+                                <span className="font-black text-xl text-white tracking-tighter leading-tight">punarvika</span>
+                                <span className="text-[10px] text-white/50 font-semibold tracking-tight leading-none">by GiggleZen Technologies</span>
                             </div>
                         </Link>
 
@@ -54,9 +54,9 @@ const Navbar = () => {
                                 <Link key={link.to} to={link.to}>
                                     <motion.span
                                         whileHover={{ scale: 1.05 }}
-                                        className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 block ${location.pathname === link.to
-                                            ? 'glass text-white'
-                                            : 'text-white/60 hover:text-white hover:bg-white/05'
+                                        className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 block ${location.pathname === link.to
+                                            ? 'glass text-white shadow-lg'
+                                            : 'text-white/70 hover:text-white hover:bg-white/10'
                                             }`}
                                     >
                                         {link.label}

@@ -55,14 +55,17 @@ const HeroStats = () => {
                 amount: amt,
                 donorInfo: { name: anon ? 'Anonymous' : name, email, isAnonymous: anon }
             });
-            const cashfree = window.Cashfree({ mode: import.meta.env.VITE_CASHFREE_MODE || 'sandbox' });
+            const mode = import.meta.env.VITE_CASHFREE_MODE || 'sandbox';
+            console.log("Initializing Cashfree in mode:", mode);
+            const cashfree = window.Cashfree({ mode });
             cashfree.checkout({
                 paymentSessionId: res.data.payment_session_id,
                 returnUrl: `${window.location.origin}/thank-you?order_id=${res.data.order_id}`,
             });
         } catch (err) {
             console.error(err);
-            alert('Error initializing payment. Please try again.');
+            const detail = err.response?.data?.details || err.response?.data?.error || err.message || 'Unknown error';
+            alert(`Payment Error: ${typeof detail === 'object' ? JSON.stringify(detail) : detail}`);
         } finally {
             setLoading(false);
         }

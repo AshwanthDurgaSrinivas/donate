@@ -79,14 +79,31 @@ router.post('/create-order', async (req, res) => {
                 customer_name: donorInfo.name || "Anonymous",
                 customer_email: donorInfo.email,
                 customer_phone: donorInfo.phone || "9999999999"
-            },
-            order_meta: {
-                return_url: `${process.env.FRONTEND_URL}/thank-you?order_id=${order_id}`,
-                notify_url: `${process.env.BACKEND_URL}/api/payments/webhook`
             }
         };
 
+        // Cashfree PRODUCTION mode requires return_url and notify_url to be HTTPS.
+        // If testing on localhost (HTTP), we omit them from order creation
+        // to prevent "order_meta.return_url_invalid" error.
+        const frontendUrl = process.env.FRONTEND_URL || '';
+        const backendUrl = process.env.BACKEND_URL || '';
+
+        if (frontendUrl.startsWith('https://') || backendUrl.startsWith('https://')) {
+            request.order_meta = {};
+            if (frontendUrl.startsWith('https://')) {
+                request.order_meta.return_url = `${frontendUrl}/thank-you?order_id=${order_id}`;
+            }
+            if (backendUrl.startsWith('https://')) {
+                request.order_meta.notify_url = `${backendUrl}/api/payments/webhook`;
+            }
+        }
+
         const response = await Cashfree.PGCreateOrder(request);
+        console.log("=== CASHFREE DEBUG ===");
+        console.log("Full response keys:", Object.keys(response));
+        console.log("response.data:", JSON.stringify(response.data, null, 2));
+        console.log("payment_session_id:", response.data?.payment_session_id);
+        console.log("=== END DEBUG ===");
 
         await db.query(
             'INSERT INTO donations (order_id, donor_name, email, phone, city, amount, is_anonymous, status) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
@@ -95,8 +112,44 @@ router.post('/create-order', async (req, res) => {
 
         res.json(response.data);
     } catch (error) {
-        console.error("Cashfree Order Error:", error.message);
-        res.status(500).json({ error: "Failed to initialize payment" });
+        console.error("Cashfree Order Error Details:", error.response ? error.response.data : error.message);
+        res.status(500).json({ error: "Failed to initialize payment", details: error.response ? error.response.data : error.message });
+    }
+});
+
+// ===== DEBUG: Test Cashfree order creation (open in browser) =====
+router.get('/test-order', async (req, res) => {
+    try {
+        const order_id = `TEST_${Date.now()}`;
+        const request = {
+            order_amount: 1,
+            order_currency: "INR",
+            order_id: order_id,
+            customer_details: {
+                customer_id: "TEST_CUST_1",
+                customer_name: "Test User",
+                customer_email: "test@example.com",
+                customer_phone: "9999999999"
+            }
+        };
+
+        const response = await Cashfree.PGCreateOrder(request);
+        res.json({
+            success: true,
+            has_payment_session_id: !!response.data?.payment_session_id,
+            payment_session_id_preview: response.data?.payment_session_id?.substring(0, 30) + '...',
+            order_id: response.data?.order_id,
+            order_status: response.data?.order_status,
+            full_response_keys: Object.keys(response.data || {}),
+            full_response: response.data
+        });
+    } catch (error) {
+        res.json({
+            success: false,
+            error: error.message,
+            cashfree_error: error.response?.data || null,
+            status_code: error.response?.status || null
+        });
     }
 });
 
