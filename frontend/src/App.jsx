@@ -7,6 +7,7 @@ import Admin from './pages/Admin';
 import Dashboard from './pages/Dashboard';
 import ThankYou from './pages/ThankYou';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 const pageTransition = {
     initial: { opacity: 0, y: 18 },
@@ -28,6 +29,7 @@ function App() {
 
     return (
         <div className="min-h-screen flex flex-col overflow-x-hidden" style={{ background: 'var(--navy-950)' }}>
+            <ScrollToTop />
             {/* Route-change progress bar */}
             <AnimatePresence>
                 {loading && (
