@@ -188,13 +188,15 @@ body {
 }
 
 /* ─── Input fields ───────────────────────────────── */
-.input-glass {
-  @apply glass w-full pr-4 pl-4 py-3 rounded-xl text-white placeholder-white/30 outline-none transition-all duration-300;
-}
+@layer components {
+  .input-glass {
+    @apply glass w-full px-4 py-3 rounded-xl text-white placeholder-white/30 outline-none transition-all duration-300;
+  }
 
-.input-glass:focus {
-  border-color: rgba(211, 47, 47, 0.5);
-  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+  .input-glass:focus {
+    border-color: rgba(211, 47, 47, 0.5);
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+  }
 }
 
 /* ─── Badge / pill ───────────────────────────────── */
