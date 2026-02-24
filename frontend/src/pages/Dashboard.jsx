@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import LiveDashboard from '../components/LiveDashboard';
 import ProgressStats from '../components/ProgressStats';
 import { useRealtimeStats } from '../hooks/useRealtimeStats';
@@ -87,8 +88,8 @@ const Dashboard = () => {
                                             animate={{ height: `${displayHeight}%` }}
                                             transition={{ delay: i * 0.05, duration: 0.8, ease: "easeOut" }}
                                             className={`w-full max-w-[44px] transition-all duration-500 rounded-t-2xl relative group-hover:scale-x-110 ${Number(d.total) > 0
-                                                    ? 'bg-gradient-to-t from-primary/20 via-primary/40 to-primary border-t-2 border-primary glow-blue shadow-[0_0_20px_rgba(211,47,47,0.2)]'
-                                                    : 'bg-white/5 border-t border-white/10'
+                                                ? 'bg-gradient-to-t from-primary/20 via-primary/40 to-primary border-t-2 border-primary glow-blue shadow-[0_0_20px_rgba(211,47,47,0.2)]'
+                                                : 'bg-white/5 border-t border-white/10'
                                                 }`}
                                         >
                                             <div className="absolute -top-14 left-1/2 -translate-x-1/2 bg-white text-gray-900 text-[11px] font-black py-2.5 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 whitespace-nowrap shadow-2xl z-20 border border-white/20">

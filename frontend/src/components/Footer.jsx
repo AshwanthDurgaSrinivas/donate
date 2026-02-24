@@ -43,10 +43,21 @@ const Footer = () => {
                             A community initiative by GiggleZen Technologies Pvt. Ltd. to raise funds for Aryansh's life-saving Zolgensma treatment through technology and collective kindness.
                         </p>
                         <div className="flex items-center space-x-3">
-                            {[{ icon: Twitter }, { icon: Linkedin }, { icon: Instagram }].map((s, i) => (
-                                <motion.div key={i} whileHover={{ scale: 1.15, y: -2 }} className="glass glass-hover w-10 h-10 rounded-xl flex items-center justify-center cursor-pointer text-white/40 hover:text-white transition-colors">
+                            {[
+                                { icon: Twitter, href: 'https://x.com/Gigglezen_Tech' },
+                                { icon: Linkedin, href: 'https://www.linkedin.com/company/gigglezen-technologies-pvt-ltd/' },
+                                { icon: Instagram, href: 'https://www.instagram.com/gigglezen_/' }
+                            ].map((s, i) => (
+                                <motion.a
+                                    key={i}
+                                    href={s.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.15, y: -2 }}
+                                    className="glass glass-hover w-10 h-10 rounded-xl flex items-center justify-center cursor-pointer text-white/40 hover:text-white transition-colors"
+                                >
                                     <s.icon className="w-4 h-4" />
-                                </motion.div>
+                                </motion.a>
                             ))}
                         </div>
                         {/* Contact */}
