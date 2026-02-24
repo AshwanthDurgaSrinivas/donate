@@ -62,11 +62,11 @@ const GiggleZen = () => {
                         GiggleZen <span className="gradient-text">Technologies</span>
                     </motion.h2>
                     <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.7 }}
-                        className="text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
+                        className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
                         We are a Gen Z–driven company led by passionate young professionals redefining Software, BPO, and Digital Marketing solutions. With innovation and creativity at our core, we empower businesses to grow through technology, strategy, and fresh ideas.
                     </motion.p>
                     <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
-                        className="mt-3 text-white/25 font-medium text-sm">Enterprise IT, BPO &amp; Digital Marketing • Global Delivery</motion.p>
+                        className="mt-3 text-white/50 font-medium text-sm">Enterprise IT, BPO &amp; Digital Marketing • Global Delivery</motion.p>
                 </div>
             </div>
 
@@ -76,10 +76,10 @@ const GiggleZen = () => {
                     <motion.div variants={revealVariant}>
                         <span className="text-[10px] font-black uppercase tracking-widest text-primary mb-4 block">Our Story</span>
                         <h3 className="text-4xl font-black text-white mb-6 leading-tight">Built by <span className="gradient-text">Passion</span>, Driven by <span className="gradient-text">Purpose</span></h3>
-                        <p className="text-white/50 text-lg leading-relaxed mb-5">
+                        <p className="text-white/70 text-lg leading-relaxed mb-5">
                             Founded with a vision to simplify digital transformation, GiggleZen began as a passionate team of engineers, strategists, and creatives. Today, we operate globally, helping startups scale faster and enterprises transform smarter.
                         </p>
-                        <p className="text-white/50 text-lg leading-relaxed">
+                        <p className="text-white/70 text-lg leading-relaxed">
                             Our approach blends technology, design, and performance marketing into one seamless process, ensuring measurable results for every client.
                         </p>
                     </motion.div>
@@ -90,9 +90,9 @@ const GiggleZen = () => {
                             { label: 'Projects Delivered', value: '120+' },
                             { label: 'Team Members', value: '25+' },
                         ].map((stat, i) => (
-                            <motion.div key={i} whileHover={{ y: -4, boxShadow: '0 20px 50px rgba(59,130,246,0.15)' }} className="glass glass-hover rounded-2xl p-6 text-center border border-white/08">
+                            <motion.div key={i} whileHover={{ y: -4, boxShadow: '0 20px 50px rgba(59,130,246,0.15)' }} className="glass glass-hover rounded-2xl p-6 text-center border border-white/10">
                                 <p className="text-4xl font-black text-primary mb-1">{stat.value}</p>
-                                <p className="text-sm text-white/40 font-medium">{stat.label}</p>
+                                <p className="text-sm text-white/60 font-medium">{stat.label}</p>
                             </motion.div>
                         ))}
                     </motion.div>
@@ -103,9 +103,9 @@ const GiggleZen = () => {
             <div className="py-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={stagger} className="text-center mb-12">
-                        <motion.span variants={revealVariant} className="text-[10px] font-black uppercase tracking-widest text-primary mb-3 block">Leadership</motion.span>
+                        <motion.span variants={revealVariant} className="text-xs font-black uppercase tracking-widest text-primary mb-3 block">Leadership</motion.span>
                         <motion.h3 variants={revealVariant} className="text-4xl font-black text-white leading-tight">Board of <span className="gradient-text">Directors</span></motion.h3>
-                        <motion.p variants={revealVariant} className="text-white/35 mt-3 max-w-md mx-auto">The visionaries driving GiggleZen's mission of innovation and excellence.</motion.p>
+                        <motion.p variants={revealVariant} className="text-white/60 mt-3 max-w-md mx-auto">The visionaries driving GiggleZen's mission of innovation and excellence.</motion.p>
                     </motion.div>
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                         {directors.map((d, i) => (
@@ -134,7 +134,7 @@ const GiggleZen = () => {
                     ].map((item, i) => (
                         <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={revealVariant}
                             whileHover={{ scale: 1.02 }}
-                            className="glass glass-hover border border-white/08 p-8 rounded-[2rem] flex space-x-6"
+                            className="glass glass-hover border border-white/10 p-8 rounded-[2rem] flex space-x-6"
                         >
                             <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center flex-shrink-0`}>
                                 <item.icon className="w-7 h-7" />
@@ -218,7 +218,7 @@ const GiggleZen = () => {
                             initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
                             transition={{ delay: i * 0.08, duration: 0.5 }}
                             whileHover={{ scale: 1.05, y: -4 }}
-                            className="glass glass-hover border border-white/08 rounded-2xl p-5 text-center group cursor-pointer"
+                            className="glass glass-hover border border-white/10 rounded-2xl p-5 text-center group cursor-pointer"
                         >
                             <div className={`w-12 h-12 mx-auto rounded-2xl bg-gradient-to-br ${s.gradient} flex items-center justify-center mb-3 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                                 <s.Icon className="w-5 h-5 text-white" />
@@ -253,7 +253,7 @@ const GiggleZen = () => {
             </div>
 
             {/* Contact Footer Bar */}
-            <div className="border-t border-white/05 py-10">
+            <div className="border-t border-white/5 py-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         <div>

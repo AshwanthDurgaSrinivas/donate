@@ -48,18 +48,23 @@ const Dashboard = () => {
                     websitesSold={Number(stats.websites_sold || 0)}
                 />
 
-                <div className="mt-12 bg-white p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+                <div className="mt-12 glass-strong p-8 md:p-12 rounded-[2.5rem] border border-white/10 overflow-hidden relative">
+                    <div className="absolute inset-0 pointer-events-none">
+                        <div className="stars opacity-30" />
+                    </div>
+
+                    <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
                         <div>
-                            <h3 className="text-2xl font-bold text-gray-900">Donation Momentum</h3>
-                            <p className="text-gray-500 font-medium">Tracking performance over the selected period</p>
+                            <div className="badge mb-3">Analytics</div>
+                            <h3 className="text-3xl font-black text-white tracking-tight">Donation <span className="gradient-text">Momentum</span></h3>
+                            <p className="text-white/50 font-medium">Tracking community impact over time</p>
                         </div>
-                        <div className="flex items-center bg-gray-50 p-1.5 rounded-2xl border border-gray-100">
+                        <div className="flex items-center glass p-1.5 rounded-2xl border border-white/10">
                             {[7, 15, 30].map((r) => (
                                 <button
                                     key={r}
                                     onClick={() => setRange(r)}
-                                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${range === r ? 'bg-white text-primary shadow-sm' : 'text-gray-400 hover:text-gray-600'
+                                    className={`px-5 py-2.5 rounded-xl text-xs font-black transition-all uppercase tracking-widest ${range === r ? 'bg-primary text-white shadow-lg glow-blue' : 'text-white/40 hover:text-white/60'
                                         }`}
                                 >
                                     {r} Days
@@ -68,29 +73,37 @@ const Dashboard = () => {
                         </div>
                     </div>
 
-                    <div className="h-80 flex items-end justify-between px-4 md:px-10 border-b border-gray-50 pb-4">
+                    <div className="relative h-80 flex items-end justify-between px-4 md:px-10 border-b border-white/5 pb-6">
                         {chartData.map((d, i) => {
-                            const height = (Number(d.total) / maxVal) * 100;
+                            // Give more weight to non-zero values so they are visible even if small
+                            const rawHeight = (Number(d.total) / maxVal) * 100;
+                            const displayHeight = Number(d.total) > 0 ? Math.max(rawHeight, 15) : 5;
+
                             return (
-                                <div key={i} className="flex flex-col items-center space-y-4 group w-full px-2">
-                                    <div className="relative w-full flex justify-center">
-                                        <div
-                                            className="w-full max-w-[40px] bg-primary/10 group-hover:bg-primary transition-all duration-500 rounded-t-xl relative border-t-2 border-primary"
-                                            style={{ height: `${Math.max(height, 5)}%`, minHeight: '10px' }}
+                                <div key={i} className="flex flex-col items-center space-y-6 group w-full px-2">
+                                    <div className="relative w-full flex justify-center items-end h-full">
+                                        <motion.div
+                                            initial={{ height: 0 }}
+                                            animate={{ height: `${displayHeight}%` }}
+                                            transition={{ delay: i * 0.05, duration: 0.8, ease: "easeOut" }}
+                                            className={`w-full max-w-[44px] transition-all duration-500 rounded-t-2xl relative group-hover:scale-x-110 ${Number(d.total) > 0
+                                                    ? 'bg-gradient-to-t from-primary/20 via-primary/40 to-primary border-t-2 border-primary glow-blue shadow-[0_0_20px_rgba(211,47,47,0.2)]'
+                                                    : 'bg-white/5 border-t border-white/10'
+                                                }`}
                                         >
-                                            <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-[10px] font-black py-2 px-3 rounded-lg opacity-0 group-hover:opacity-100 transition whitespace-nowrap shadow-xl z-20">
+                                            <div className="absolute -top-14 left-1/2 -translate-x-1/2 bg-white text-gray-900 text-[11px] font-black py-2.5 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 whitespace-nowrap shadow-2xl z-20 border border-white/20">
                                                 ₹{Number(d.total).toLocaleString()}
-                                                <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                                <div className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-white"></div>
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     </div>
-                                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter truncate w-full text-center">{d.day}</span>
+                                    <span className="text-[10px] font-black text-white/30 uppercase tracking-widest truncate w-full text-center group-hover:text-white/60 transition-colors">{d.day}</span>
                                 </div>
                             );
                         })}
                     </div>
                     {dailyData.length === 0 && (
-                        <p className="text-center text-[10px] text-gray-400 mt-4 italic">Showing sample data until more donations arrive.</p>
+                        <p className="text-center text-xs font-black text-white/20 mt-8 tracking-widest uppercase italic">Awaiting more community contributions...</p>
                     )}
                 </div>
 

@@ -22,14 +22,14 @@ CREATE TABLE stats (
   total_raised NUMERIC(20, 2) DEFAULT 0,
   total_donors INT DEFAULT 0,
   websites_sold INT DEFAULT 0,
-  target_amount NUMERIC(20, 2) DEFAULT 160000000,
+  target_amount NUMERIC(20, 2) DEFAULT 16000000,
   last_updated TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
   CONSTRAINT single_row CHECK (id = 1)
 );
 
 -- Initialize stats row
 INSERT INTO stats (id, total_raised, total_donors, websites_sold, target_amount) 
-VALUES (1, 0, 0, 0, 160000000)
+VALUES (1, 0, 0, 0, 16000000)
 ON CONFLICT (id) DO NOTHING;
 
 -- Website leads table

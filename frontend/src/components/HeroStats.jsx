@@ -105,8 +105,8 @@ const HeroStats = () => {
                         </motion.h1>
 
                         <motion.p variants={fadeUp} className="text-base sm:text-lg text-white/50 leading-relaxed max-w-lg">
-                            Aryansh is fighting SMA Type 1. Help us reach the{' '}
-                            <span className="text-primary font-bold">₹16 Crore</span> Zolgensma goal.
+                            Help us reach the{' '}
+                            <span className="text-primary font-bold">₹1.6 Crore</span> Zolgensma goal.
                             Donations start from just <span className="text-emerald-400 font-bold">₹1</span>.
                         </motion.p>
 
@@ -115,10 +115,10 @@ const HeroStats = () => {
                             {[
                                 { label: 'Raised', value: <><span className="text-primary">₹</span><AnimatedCounter value={stats.total_raised} /></>, color: 'text-white' },
                                 { label: 'Donors', value: <AnimatedCounter value={stats.total_donors} />, color: 'text-accent' },
-                                { label: 'Target', value: '₹16 Cr', color: 'text-accent-cyan' },
+                                { label: 'Target', value: '₹1.6 Cr', color: 'text-accent-cyan' },
                             ].map((s, i) => (
                                 <motion.div key={i} whileHover={{ y: -3 }} className="glass glass-hover rounded-2xl px-4 py-3 text-center min-w-[110px]">
-                                    <p className="text-white/30 text-[9px] font-black uppercase tracking-widest mb-0.5">{s.label}</p>
+                                    <p className="text-white/60 text-xs font-black uppercase tracking-widest mb-0.5">{s.label}</p>
                                     <p className={`text-xl sm:text-2xl font-black ${s.color}`}>{s.value}</p>
                                 </motion.div>
                             ))}
@@ -127,7 +127,7 @@ const HeroStats = () => {
                         {/* Progress */}
                         <motion.div variants={fadeUp} className="glass rounded-2xl p-4 max-w-lg">
                             <div className="flex justify-between items-center mb-2">
-                                <span className="text-white/40 text-[9px] font-black uppercase tracking-widest">Zolgensma Fund Progress</span>
+                                <span className="text-white/70 text-xs font-black uppercase tracking-widest">Zolgensma Fund Progress</span>
                                 <span className="text-primary text-xs font-black">{pct.toFixed(2)}%</span>
                             </div>
                             <div className="progress-track">
@@ -149,92 +149,104 @@ const HeroStats = () => {
                         <div className="absolute -inset-2 rounded-[2.5rem] blur-3xl opacity-20 group-hover:opacity-35 transition-all duration-700 pointer-events-none"
                             style={{ background: 'linear-gradient(135deg, rgba(211,47,47,0.5), rgba(239,83,80,0.4))' }} />
 
-                        <div className="relative glass-strong border border-white/10 rounded-[2.5rem] p-6 sm:p-8">
-                            {/* Card header */}
-                            <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                    style={{ background: 'linear-gradient(135deg,#d32f2f,#ff1744)' }}>
-                                    <Heart className="w-5 h-5 text-white" fill="currentColor" />
-                                </div>
-                                <div>
-                                    <h2 className="font-black text-white text-lg leading-tight">Donate Now</h2>
-                                    <p className="text-white/35 text-xs">100% goes to Aryansh's Zolgensma gene therapy</p>
+                        <div className="relative glass-strong border border-white/10 rounded-[2.5rem] overflow-hidden">
+                            {/* Browser Header */}
+                            <div className="browser-header">
+                                <div className="browser-dot browser-dot-red" />
+                                <div className="browser-dot browser-dot-yellow" />
+                                <div className="browser-dot browser-dot-green" />
+                                <div className="ml-4 h-6 px-4 rounded-lg bg-white/5 border border-white/5 flex items-center">
+                                    <span className="text-[10px] text-white/30 font-mono">secure.donate.gigglezen.com</span>
                                 </div>
                             </div>
 
-                            <form onSubmit={handleDonate} className="space-y-4">
-                                {/* Preset amounts */}
-                                <div>
-                                    <p className="text-[9px] font-black uppercase tracking-widest text-white/30 mb-2">Quick Select</p>
-                                    <div className="grid grid-cols-3 gap-2">
-                                        {PRESETS.map(p => (
-                                            <motion.button key={p} type="button"
-                                                whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.93 }}
-                                                onClick={() => { playClick(); setAmount(p.toString()); }}
-                                                className={`py-2.5 rounded-xl text-sm font-bold border transition-all ${amount === p.toString()
-                                                    ? 'border-primary bg-primary/20 text-primary shadow-[0_0_15px_rgba(211,47,47,0.3)]'
-                                                    : 'glass border-white/08 text-white/50 hover:border-primary/40 hover:text-white/80'
-                                                    }`}>
-                                                ₹{p >= 1000 ? `${p / 1000}K` : p}
-                                            </motion.button>
-                                        ))}
+                            <div className="p-6 sm:p-8">
+                                {/* Card header */}
+                                <div className="flex items-center space-x-3 mb-6">
+                                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                        style={{ background: 'linear-gradient(135deg,#d32f2f,#ff1744)' }}>
+                                        <Heart className="w-5 h-5 text-white" fill="currentColor" />
+                                    </div>
+                                    <div>
+                                        <h2 className="font-black text-white text-lg leading-tight">Donate Now</h2>
+                                        <p className="text-white/35 text-xs">100% goes to Aryansh's Zolgensma gene therapy</p>
                                     </div>
                                 </div>
 
-                                {/* Custom amount */}
-                                <div className="relative">
-                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 font-black text-white/50 text-xl pointer-events-none">₹</span>
-                                    <input type="number" min="1" required placeholder="Enter amount"
-                                        className="input-glass text-xl font-black h-14" style={{ paddingLeft: '3rem' }}
-                                        value={amount} onChange={e => setAmount(e.target.value)} />
-                                </div>
+                                <form onSubmit={handleDonate} className="space-y-4">
+                                    {/* Preset amounts */}
+                                    <div>
+                                        <p className="text-xs font-black uppercase tracking-widest text-white/60 mb-2">Quick Select</p>
+                                        <div className="grid grid-cols-3 gap-2">
+                                            {PRESETS.map(p => (
+                                                <motion.button key={p} type="button"
+                                                    whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.93 }}
+                                                    onClick={() => { playClick(); setAmount(p.toString()); }}
+                                                    className={`py-2.5 rounded-xl text-sm font-bold border transition-all ${amount === p.toString()
+                                                        ? 'border-primary bg-primary/20 text-primary shadow-[0_0_15px_rgba(211,47,47,0.3)]'
+                                                        : 'glass border-white/10 text-white/50 hover:border-primary/40 hover:text-white/80'
+                                                        }`}>
+                                                    ₹{p >= 1000 ? `${p / 1000}K` : p}
+                                                </motion.button>
+                                            ))}
+                                        </div>
+                                    </div>
 
-                                {/* Anonymous toggle */}
-                                <div className="flex items-center space-x-2">
-                                    <input type="checkbox" id="hero-anon" checked={anon} onChange={e => setAnon(e.target.checked)}
-                                        className="w-4 h-4 accent-primary rounded" />
-                                    <label htmlFor="hero-anon" className="text-sm text-white/45 cursor-pointer font-medium">Donate Anonymously</label>
-                                </div>
+                                    {/* Custom amount */}
+                                    <div className="relative">
+                                        <span className="absolute left-4 top-1/2 -translate-y-1/2 font-black text-white/50 text-xl pointer-events-none">₹</span>
+                                        <input type="number" min="1" required placeholder="Enter amount"
+                                            className="input-glass text-xl font-black h-14" style={{ paddingLeft: '3rem' }}
+                                            value={amount} onChange={e => setAmount(e.target.value)} />
+                                    </div>
 
-                                {/* Name + Email (hidden if anon) */}
-                                <AnimatePresence>
-                                    {!anon && (
-                                        <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.3 }} className="overflow-hidden space-y-3">
-                                            <div className="relative">
-                                                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
-                                                <input type="text" placeholder="Your Name" required={!anon}
-                                                    className="input-glass" style={{ paddingLeft: '3rem' }} value={name} onChange={e => setName(e.target.value)} />
-                                            </div>
-                                            <div className="relative">
-                                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
-                                                <input type="email" placeholder="Email (for receipt)" required={!anon}
-                                                    className="input-glass" style={{ paddingLeft: '3rem' }} value={email} onChange={e => setEmail(e.target.value)} />
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
+                                    {/* Anonymous toggle */}
+                                    <div className="flex items-center space-x-2">
+                                        <input type="checkbox" id="hero-anon" checked={anon} onChange={e => setAnon(e.target.checked)}
+                                            className="w-4 h-4 accent-primary rounded" />
+                                        <label htmlFor="hero-anon" className="text-sm text-white/45 cursor-pointer font-medium">Donate Anonymously</label>
+                                    </div>
 
-                                {/* Submit */}
-                                <motion.button type="submit" disabled={loading}
-                                    whileHover={{ scale: 1.02, boxShadow: '0 0 50px rgba(211,47,47,0.6)' }}
-                                    whileTap={{ scale: 0.97 }}
-                                    className="btn-primary w-full py-4 text-lg disabled:opacity-60 disabled:cursor-not-allowed">
-                                    {loading
-                                        ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                                        : <>
-                                            <motion.span animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1.2, repeat: Infinity }}>❤️</motion.span>
-                                            <span className="ml-2">DONATE {amount ? `₹${Number(amount).toLocaleString()}` : 'NOW'}</span>
-                                        </>
-                                    }
-                                </motion.button>
+                                    {/* Name + Email (hidden if anon) */}
+                                    <AnimatePresence>
+                                        {!anon && (
+                                            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
+                                                transition={{ duration: 0.3 }} className="overflow-hidden space-y-3">
+                                                <div className="relative">
+                                                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
+                                                    <input type="text" placeholder="Your Name" required={!anon}
+                                                        className="input-glass" style={{ paddingLeft: '3rem' }} value={name} onChange={e => setName(e.target.value)} />
+                                                </div>
+                                                <div className="relative">
+                                                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
+                                                    <input type="email" placeholder="Email (for receipt)" required={!anon}
+                                                        className="input-glass" style={{ paddingLeft: '3rem' }} value={email} onChange={e => setEmail(e.target.value)} />
+                                                </div>
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
 
-                                {/* Trust line */}
-                                <div className="flex items-center justify-center space-x-2 text-white/25">
-                                    <ShieldCheck className="w-3.5 h-3.5" />
-                                    <span className="text-[9px] font-black uppercase tracking-widest">Secured by Cashfree · 100% Transparent</span>
-                                </div>
-                            </form>
+                                    {/* Submit */}
+                                    <motion.button type="submit" disabled={loading}
+                                        whileHover={{ scale: 1.02, boxShadow: '0 0 50px rgba(211,47,47,0.6)' }}
+                                        whileTap={{ scale: 0.97 }}
+                                        className="btn-primary w-full py-4 text-lg disabled:opacity-60 disabled:cursor-not-allowed">
+                                        {loading
+                                            ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                            : <>
+                                                <motion.span animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1.2, repeat: Infinity }}>❤️</motion.span>
+                                                <span className="ml-2">DONATE {amount ? `₹${Number(amount).toLocaleString()}` : 'NOW'}</span>
+                                            </>
+                                        }
+                                    </motion.button>
+
+                                    {/* Trust line */}
+                                    <div className="flex items-center justify-center space-x-2 text-white/25">
+                                        <ShieldCheck className="w-3.5 h-3.5" />
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400/60">Secured by Cashfree · 100% Transparent</span>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </motion.div>
 

@@ -101,7 +101,7 @@ const DonationCard = ({ donation, isNew }) => {
                 {/* Info */}
                 <div className="flex-1 min-w-0">
                     <p className="font-black text-white text-sm truncate">{name}</p>
-                    <span className={`inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest border ${tier.badge}`}>
+                    <span className={`inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-widest border ${tier.badge}`}>
                         <Icon className="w-2.5 h-2.5" />
                         <span>{tier.label}</span>
                     </span>
@@ -130,7 +130,7 @@ const DonationCard = ({ donation, isNew }) => {
                     initial={{ x: '-100%' }}
                     animate={{ x: '200%' }}
                     transition={{ duration: 0.8, delay: 0.1 }}
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/08 to-transparent pointer-events-none"
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none"
                 />
             )}
         </motion.div>
@@ -141,7 +141,7 @@ const DonationCard = ({ donation, isNew }) => {
 const TierBadge = ({ Icon, label, color }) => (
     <div className={`glass border ${color} flex items-center space-x-1.5 px-3 py-1.5 rounded-xl flex-shrink-0`}>
         <Icon className="w-3.5 h-3.5" />
-        <span className="text-[10px] font-black text-white/60 uppercase tracking-widest">{label}</span>
+        <span className="text-xs font-black text-white/70 uppercase tracking-widest">{label}</span>
     </div>
 );
 
@@ -210,7 +210,7 @@ const LiveDashboard = () => {
                             <h2 className="text-3xl font-black text-white">
                                 Live <span className="gradient-text">Donation Feed</span>
                             </h2>
-                            <p className="text-white/35 text-sm mt-1">collecting funds by GiggleZen Technologies Pvt. Ltd.</p>
+                            <p className="text-white/60 text-sm mt-1">collecting funds by GiggleZen Technologies Pvt. Ltd.</p>
                         </div>
 
                         {/* Today's total */}
@@ -227,7 +227,7 @@ const LiveDashboard = () => {
 
                     {/* Tier legend */}
                     <div className="flex items-center space-x-2 mt-6 overflow-x-auto scrollbar-hide pb-1">
-                        <p className="text-white/25 text-[9px] font-black uppercase tracking-widest flex-shrink-0 flex items-center space-x-1">
+                        <p className="text-white/60 text-xs font-black uppercase tracking-widest flex-shrink-0 flex items-center space-x-1">
                             <Users className="w-3 h-3" /><span>Tiers:</span>
                         </p>
                         {tiers.map((t, i) => <TierBadge key={i} {...t} />)}

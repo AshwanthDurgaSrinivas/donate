@@ -173,7 +173,7 @@ const VideoSection = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeUp}
-                    className="mt-10 text-center text-white/50 text-lg max-w-2xl mx-auto leading-relaxed"
+                    className="mt-10 text-center text-white/70 text-lg max-w-2xl mx-auto leading-relaxed"
                 >
                     Every moment in Aryansh's journey is a testament to hope. Your
                     support is changing the course of a life.
@@ -222,7 +222,7 @@ const VideoSection = () => {
                             <ChevronRight className="w-6 h-6" />
                         </button>
 
-                        <p className="absolute bottom-8 left-0 right-0 text-center text-white/60 text-sm font-medium">
+                        <p className="absolute bottom-8 left-0 right-0 text-center text-white/80 text-sm font-medium">
                             {images[current].caption} — {current + 1}/{images.length}
                         </p>
                     </motion.div>

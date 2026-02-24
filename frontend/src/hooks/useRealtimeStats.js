@@ -9,7 +9,7 @@ export const useRealtimeStats = () => {
         total_raised: 0,
         total_donors: 0,
         websites_sold: 0,
-        target_amount: 160000000
+        target_amount: 16000000
     });
 
     useEffect(() => {

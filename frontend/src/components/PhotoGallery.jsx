@@ -41,7 +41,7 @@ const PhotoGallery = () => {
                     <h2 className="text-3xl sm:text-4xl font-black text-white mt-3">
                         Every <span className="gradient-text">Moment</span> Worth Fighting For
                     </h2>
-                    <p className="text-white/35 mt-3 max-w-lg mx-auto text-sm">
+                    <p className="text-white/60 mt-3 max-w-lg mx-auto text-sm">
                         Glimpses of Aryansh's brave journey. Click to view full size.
                     </p>
                 </motion.div>
@@ -57,7 +57,7 @@ const PhotoGallery = () => {
                             transition={{ delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                             whileHover={{ scale: 1.03, y: -6 }}
                             onClick={() => setSelected(i)}
-                            className="relative rounded-2xl overflow-hidden cursor-pointer group border border-white/08 shadow-card h-[240px] sm:h-[280px] lg:h-[320px]"
+                            className="relative rounded-2xl overflow-hidden cursor-pointer group border border-white/10 shadow-card h-[240px] sm:h-[280px] lg:h-[320px]"
                         >
                             <img
                                 src={photo.src}
@@ -72,9 +72,8 @@ const PhotoGallery = () => {
                                 <ZoomIn className="w-4 h-4 text-white" />
                             </div>
 
-                            {/* Tag */}
                             <div className="absolute top-3 left-3 glass px-2.5 py-1 rounded-lg">
-                                <span className="text-[9px] text-white/60 font-black uppercase tracking-widest">{photo.tag}</span>
+                                <span className="text-xs text-white/70 font-black uppercase tracking-widest">{photo.tag}</span>
                             </div>
 
                             {/* Caption */}
@@ -107,7 +106,7 @@ const PhotoGallery = () => {
                             <div className="p-4 flex items-center justify-between">
                                 <div>
                                     <p className="text-white font-black text-sm">{photos[selected].caption}</p>
-                                    <p className="text-white/35 text-xs mt-0.5">{selected + 1} of {photos.length}</p>
+                                    <p className="text-white/60 text-xs mt-0.5">{selected + 1} of {photos.length}</p>
                                 </div>
                                 <div className="flex space-x-1.5">
                                     {photos.map((_, i) => (

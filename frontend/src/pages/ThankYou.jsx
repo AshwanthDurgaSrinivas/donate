@@ -46,7 +46,7 @@ const ThankYou = () => {
     }, []);
 
     const handleShare = () => {
-        const text = `I just donated to save Aryansh's life! 💙 Join the mission to raise ₹16 Crore for Zolgensma treatment. Every rupee counts!`;
+        const text = `I just donated to save Aryansh's life! 💙 Join the mission to raise ₹1.6 Crore for Zolgensma treatment. Every rupee counts!`;
         if (navigator.share) {
             navigator.share({ title: 'Save Aryansh', text, url: window.location.origin });
         } else {

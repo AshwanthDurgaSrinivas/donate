@@ -60,7 +60,7 @@ const DonationForm = () => {
                             Your Contribution<br />Can <span className="gradient-text">Save Aryansh</span>
                         </motion.h2>
                         <motion.p variants={fadeUp} className="text-white/50 text-lg leading-relaxed">
-                            Each rupee counts towards the ₹16 Crore Zolgensma treatment. When thousands come together, impossible becomes possible.
+                            Each rupee counts towards the ₹1.6 Crore Zolgensma treatment. When thousands come together, impossible becomes possible.
                         </motion.p>
                         <motion.ul variants={fadeUp} className="space-y-3">
                             {['Minimum donation as low as ₹1', '100% Secure via Cashfree', 'Instant email donation receipt', 'Real-time financial transparency'].map((item, i) => (
@@ -126,7 +126,7 @@ const DonationForm = () => {
                                                 onClick={() => { playClick(); setFormData({ ...formData, amount: p.toString() }); }}
                                                 className={`py-2.5 rounded-xl text-sm font-bold transition-all border ${formData.amount === p.toString()
                                                     ? 'border-primary bg-primary/20 text-primary glow-blue'
-                                                    : 'glass border-white/08 text-white/50 hover:border-primary/40 hover:text-white/80'
+                                                    : 'glass border-white/10 text-white/50 hover:border-primary/40 hover:text-white/80'
                                                     }`}>
                                                 ₹{p >= 1000 ? `${p / 1000}K` : p}
                                             </motion.button>

@@ -20,7 +20,7 @@ const Footer = () => {
     };
 
     return (
-        <footer className="page-bg border-t border-white/05 relative overflow-hidden">
+        <footer className="page-bg border-t border-white/5 relative overflow-hidden">
             <div className="absolute inset-0 pointer-events-none">
                 <div className="stars opacity-50" />
                 <div className="orb orb-blue absolute w-64 h-64 -bottom-20 left-1/2 opacity-10" />
@@ -78,7 +78,7 @@ const Footer = () => {
                     <div className="flex" style={{ animation: 'ticker 30s linear infinite', width: '200%' }}>
                         {[...Array(8)].map((_, i) => (
                             <span key={i} className="text-white/10 text-xs font-black uppercase tracking-widest mr-8 flex-shrink-0">
-                                💙 Save Aryansh &nbsp;•&nbsp; ₹16 Crore Goal &nbsp;•&nbsp; 500 Websites Initiative &nbsp;•&nbsp; GiggleZen Technologies &nbsp;•&nbsp;
+                                💙 Save Aryansh &nbsp;•&nbsp; ₹1.6 Crore Goal &nbsp;•&nbsp; 500 Websites Initiative &nbsp;•&nbsp; GiggleZen Technologies &nbsp;•&nbsp;
                             </span>
                         ))}
                     </div>

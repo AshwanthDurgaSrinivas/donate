@@ -55,8 +55,8 @@ const WebsitePackage = () => {
                     <h2 className="text-4xl md:text-5xl font-black text-white mt-3 leading-tight">
                         Book a Website.<br /><span className="gradient-text-warm">Save a Life.</span>
                     </h2>
-                    <p className="text-white/40 mt-4 max-w-xl mx-auto text-lg">
-                        Get a <span className="text-white/70 font-semibold">premium 5-page business website</span> for just ₹10,000.
+                    <p className="text-white/60 mt-4 max-w-xl mx-auto text-lg">
+                        Get a <span className="text-white/80 font-semibold">premium 5-page business website</span> for just ₹10,000.
                         100% of proceeds go directly to Aryansh's Zolgensma treatment.
                     </p>
                 </motion.div>
@@ -67,28 +67,39 @@ const WebsitePackage = () => {
                         className="relative group">
                         <div className="absolute -inset-1 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-700"
                             style={{ background: 'linear-gradient(135deg, rgba(239,83,80,0.4), rgba(211,47,47,0.3))' }} />
-                        <div className="relative glass-strong border border-white/10 rounded-[2.5rem] p-8 md:p-10">
-                            <div className="flex items-end space-x-2 mb-8">
-                                <span className="text-5xl font-black text-white">₹10,000</span>
-                                <span className="text-white/30 font-medium mb-1">/ website</span>
+                        <div className="relative glass-strong border border-white/10 rounded-[2.5rem] overflow-hidden">
+                            {/* Browser Header */}
+                            <div className="browser-header">
+                                <div className="browser-dot browser-dot-red" />
+                                <div className="browser-dot browser-dot-yellow" />
+                                <div className="browser-dot browser-dot-green" />
+                                <div className="ml-4 h-6 px-4 rounded-lg bg-white/5 border border-white/5 flex items-center">
+                                    <span className="text-[10px] text-white/30 font-mono">portal.gigglezen.com</span>
+                                </div>
                             </div>
-                            <div className="divider mb-7" />
-                            <div className="grid grid-cols-1 gap-4 mb-8">
-                                {features.map((f, i) => (
-                                    <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-                                        transition={{ delay: i * 0.08 }}
-                                        className="flex items-center space-x-3 group/item">
-                                        <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover/item:scale-110"
-                                            style={{ background: 'linear-gradient(135deg, rgba(239,83,80,0.2), rgba(211,47,47,0.2))', border: '1px solid rgba(239,83,80,0.2)' }}>
-                                            <f.icon className="w-4 h-4 text-accent-cyan" />
-                                        </div>
-                                        <span className="text-white/70 font-medium">{f.label}</span>
-                                    </motion.div>
-                                ))}
-                            </div>
-                            <div className="glass-dark border border-accent-cyan/20 rounded-2xl p-5 text-center">
-                                <p className="text-accent-cyan font-black text-sm uppercase tracking-widest mb-1">💡 Impact</p>
-                                <p className="text-white/60 text-sm">Selling 500 websites = ₹50 Lakh towards the ₹16 Crore goal</p>
+                            <div className="p-8 md:p-10">
+                                <div className="flex items-end space-x-2 mb-8">
+                                    <span className="text-5xl font-black text-white">₹10,000</span>
+                                    <span className="text-white/30 font-medium mb-1">/ website</span>
+                                </div>
+                                <div className="divider mb-7" />
+                                <div className="grid grid-cols-1 gap-4 mb-8">
+                                    {features.map((f, i) => (
+                                        <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+                                            transition={{ delay: i * 0.08 }}
+                                            className="flex items-center space-x-3 group/item">
+                                            <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover/item:scale-110"
+                                                style={{ background: 'linear-gradient(135deg, rgba(239,83,80,0.2), rgba(211,47,47,0.2))', border: '1px solid rgba(239,83,80,0.2)' }}>
+                                                <f.icon className="w-4 h-4 text-accent-cyan" />
+                                            </div>
+                                            <span className="text-white/70 font-medium">{f.label}</span>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                                <div className="glass-dark border border-accent-cyan/20 rounded-2xl p-5 text-center">
+                                    <p className="text-accent-cyan font-black text-sm uppercase tracking-widest mb-1">💡 Impact</p>
+                                    <p className="text-white/80 text-sm font-medium">Selling 500 websites = ₹50 Lakh towards the ₹1.6 Crore goal</p>
+                                </div>
                             </div>
                         </div>
                     </motion.div>
@@ -98,54 +109,65 @@ const WebsitePackage = () => {
                         className="relative group">
                         <div className="absolute -inset-1 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-700"
                             style={{ background: 'linear-gradient(135deg, rgba(211,47,47,0.4), rgba(239,83,80,0.3))' }} />
-                        <div className="relative glass-strong border border-white/10 rounded-[2.5rem] p-8 md:p-10">
-                            <AnimatePresence mode="wait">
-                                {submitted ? (
-                                    <motion.div key="success" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
-                                        className="flex flex-col items-center justify-center py-12 text-center space-y-4">
-                                        <motion.div initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                                            className="w-20 h-20 rounded-full flex items-center justify-center text-4xl shadow-lg"
-                                            style={{ background: 'linear-gradient(135deg,#10b981,#059669)' }}>✓</motion.div>
-                                        <h3 className="text-2xl font-black text-white">Request Received! 🎉</h3>
-                                        <p className="text-white/50">Our team will contact you within 24 hours to discuss your website requirements.</p>
-                                        <motion.button whileHover={{ scale: 1.05 }} onClick={() => setSubmitted(false)} className="btn-ghost text-sm px-5 py-2">Submit Another</motion.button>
-                                    </motion.div>
-                                ) : (
-                                    <motion.form key="form" onSubmit={handleSubmit} className="space-y-4">
-                                        <h3 className="text-xl font-black text-white mb-6">Book Your Website</h3>
-                                        {[
-                                            { icon: User, placeholder: 'Full Name', key: 'name', type: 'text' },
-                                            { icon: Phone, placeholder: 'Mobile Number', key: 'mobile', type: 'tel' },
-                                            { icon: Mail, placeholder: 'Email Address', key: 'email', type: 'email' },
-                                        ].map(f => (
-                                            <div key={f.key} className="relative">
-                                                <f.icon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/25" />
-                                                <input type={f.type} required placeholder={f.placeholder}
-                                                    className="input-glass pl-10"
-                                                    value={formData[f.key]}
-                                                    onChange={e => setFormData({ ...formData, [f.key]: e.target.value })} />
+                        <div className="relative glass-strong border border-white/10 rounded-[2.5rem] overflow-hidden">
+                            {/* Browser Header */}
+                            <div className="browser-header">
+                                <div className="browser-dot browser-dot-red" />
+                                <div className="browser-dot browser-dot-yellow" />
+                                <div className="browser-dot browser-dot-green" />
+                                <div className="ml-4 h-6 px-4 rounded-lg bg-white/5 border border-white/5 flex items-center">
+                                    <span className="text-[10px] text-white/30 font-mono">portal.gigglezen.com</span>
+                                </div>
+                            </div>
+                            <div className="p-8 md:p-10">
+                                <AnimatePresence mode="wait">
+                                    {submitted ? (
+                                        <motion.div key="success" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
+                                            className="flex flex-col items-center justify-center py-12 text-center space-y-4">
+                                            <motion.div initial={{ scale: 0, rotate: -180 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                                                className="w-20 h-20 rounded-full flex items-center justify-center text-4xl shadow-lg"
+                                                style={{ background: 'linear-gradient(135deg,#10b981,#059669)' }}>✓</motion.div>
+                                            <h3 className="text-2xl font-black text-white">Request Received! 🎉</h3>
+                                            <p className="text-white/70">Our team will contact you within 24 hours to discuss your website requirements.</p>
+                                            <motion.button whileHover={{ scale: 1.05 }} onClick={() => setSubmitted(false)} className="btn-ghost text-sm px-5 py-2">Submit Another</motion.button>
+                                        </motion.div>
+                                    ) : (
+                                        <motion.form key="form" onSubmit={handleSubmit} className="space-y-4">
+                                            <h3 className="text-xl font-black text-white mb-6">Book Your Website</h3>
+                                            {[
+                                                { icon: User, placeholder: 'Full Name', key: 'name', type: 'text' },
+                                                { icon: Phone, placeholder: 'Mobile Number', key: 'mobile', type: 'tel' },
+                                                { icon: Mail, placeholder: 'Email Address', key: 'email', type: 'email' },
+                                            ].map(f => (
+                                                <div key={f.key} className="relative">
+                                                    <f.icon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
+                                                    <input type={f.type} required placeholder={f.placeholder}
+                                                        className="input-glass pl-10"
+                                                        value={formData[f.key]}
+                                                        onChange={e => setFormData({ ...formData, [f.key]: e.target.value })} />
+                                                </div>
+                                            ))}
+                                            <div className="relative">
+                                                <MessageSquare className="absolute left-3 top-3.5 w-4 h-4 text-white/50" />
+                                                <textarea placeholder="Tell us about your business..." rows={3}
+                                                    className="input-glass pl-10 resize-none"
+                                                    value={formData.message}
+                                                    onChange={e => setFormData({ ...formData, message: e.target.value })} />
                                             </div>
-                                        ))}
-                                        <div className="relative">
-                                            <MessageSquare className="absolute left-3 top-3.5 w-4 h-4 text-white/25" />
-                                            <textarea placeholder="Tell us about your business..." rows={3}
-                                                className="input-glass pl-10 resize-none"
-                                                value={formData.message}
-                                                onChange={e => setFormData({ ...formData, message: e.target.value })} />
-                                        </div>
-                                        <motion.button type="submit" disabled={submitting}
-                                            whileHover={{ scale: 1.02, boxShadow: '0 0 40px rgba(34,211,238,0.4)' }}
-                                            whileTap={{ scale: 0.97 }}
-                                            className="w-full py-4 rounded-2xl font-black text-white text-lg flex items-center justify-center space-x-2 transition-all disabled:opacity-60"
-                                            style={{ background: 'linear-gradient(135deg, #ef5350, #d32f2f)', boxShadow: '0 8px 30px rgba(239,83,80,0.25)' }}>
-                                            {submitting
-                                                ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                                                : <><Send className="w-5 h-5" /><span>Book Now — Save a Life</span></>
-                                            }
-                                        </motion.button>
-                                    </motion.form>
-                                )}
-                            </AnimatePresence>
+                                            <motion.button type="submit" disabled={submitting}
+                                                whileHover={{ scale: 1.02, boxShadow: '0 0 40px rgba(34,211,238,0.4)' }}
+                                                whileTap={{ scale: 0.97 }}
+                                                className="w-full py-4 rounded-2xl font-black text-white text-lg flex items-center justify-center space-x-2 transition-all disabled:opacity-60"
+                                                style={{ background: 'linear-gradient(135deg, #ef5350, #d32f2f)', boxShadow: '0 8px 30px rgba(239,83,80,0.25)' }}>
+                                                {submitting
+                                                    ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                                    : <><Send className="w-5 h-5" /><span>Book Now — Save a Life</span></>
+                                                }
+                                            </motion.button>
+                                        </motion.form>
+                                    )}
+                                </AnimatePresence>
+                            </div>
                         </div>
                     </motion.div>
                 </div>

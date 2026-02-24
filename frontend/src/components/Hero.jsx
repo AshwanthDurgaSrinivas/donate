@@ -23,7 +23,7 @@ const Hero = () => {
                         <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                             We are building 500 premium business websites for ₹10,000 each.
                             100% of your payment goes directly to the treatment of Aryansh,
-                            who needs a ₹16 Crore life-saving medicine.
+                            who needs a ₹1.6 Crore life-saving medicine.
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                             <button className="btn-primary flex items-center justify-center">

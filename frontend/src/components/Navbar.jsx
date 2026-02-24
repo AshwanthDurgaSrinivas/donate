@@ -107,7 +107,7 @@ const Navbar = () => {
                         className="fixed top-16 left-4 right-4 z-40 glass-strong rounded-2xl p-4 space-y-2 border border-white/10"
                     >
                         {links.map(link => (
-                            <Link key={link.to} to={link.to} className={`block px-4 py-3 rounded-xl text-sm font-semibold transition-all ${location.pathname === link.to ? 'glass text-white' : 'text-white/60 hover:text-white hover:bg-white/05'}`}>
+                            <Link key={link.to} to={link.to} className={`block px-4 py-3 rounded-xl text-sm font-semibold transition-all ${location.pathname === link.to ? 'glass text-white' : 'text-white/60 hover:text-white hover:bg-white/5'}`}>
                                 {link.label}
                             </Link>
                         ))}

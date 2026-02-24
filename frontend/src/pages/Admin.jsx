@@ -227,7 +227,7 @@ const Admin = () => {
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <p className="text-gray-500 text-sm mb-1">Target Remaining</p>
                         <h3 className="text-2xl font-bold text-orange-500">
-                            ₹{((data.stats?.target_amount || 160000000) - (data.stats?.total_raised || 0)).toLocaleString()}
+                            ₹{((data.stats?.target_amount || 16000000) - (data.stats?.total_raised || 0)).toLocaleString()}
                         </h3>
                     </div>
                 </div>
