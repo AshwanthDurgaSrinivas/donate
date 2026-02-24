@@ -46,9 +46,9 @@ const ThankYou = () => {
     }, []);
 
     const handleShare = () => {
-        const text = `I just donated to save Punarvika's life! 💙 Join the mission to raise ₹16 Crore for Zolgensma treatment. Every rupee counts!`;
+        const text = `I just donated to save Aryansh's life! 💙 Join the mission to raise ₹16 Crore for Zolgensma treatment. Every rupee counts!`;
         if (navigator.share) {
-            navigator.share({ title: 'Save Punarvika', text, url: window.location.origin });
+            navigator.share({ title: 'Save Aryansh', text, url: window.location.origin });
         } else {
             window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + window.location.origin)}`, '_blank');
         }
@@ -68,9 +68,9 @@ const ThankYou = () => {
             {/* Background orbs */}
             <div className="fixed inset-0 pointer-events-none z-0">
                 <motion.div animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 8, repeat: Infinity }}
-                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-200 rounded-full blur-[120px]" />
+                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-200 rounded-full blur-[120px]" />
                 <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }} transition={{ duration: 10, repeat: Infinity, delay: 2 }}
-                    className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-200 rounded-full blur-[100px]" />
+                    className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-rose-200 rounded-full blur-[100px]" />
             </div>
 
             <motion.div
@@ -115,7 +115,7 @@ const ThankYou = () => {
                     Your Heart Just Saved a Life.
                 </motion.p>
                 <motion.p variants={itemVariants} className="text-gray-400 font-medium mb-12">
-                    Punarvika is one step closer to Zolgensma. 💙
+                    Aryansh is one step closer to Zolgensma. 💙
                 </motion.p>
 
                 <motion.div
@@ -140,7 +140,7 @@ const ThankYou = () => {
                             <span>Share &amp; Inspire Others</span>
                         </motion.button>
                         <motion.a
-                            href={`https://wa.me/?text=${encodeURIComponent('I just supported Punarvika! 💙 Join me: ' + window.location.origin)}`}
+                            href={`https://wa.me/?text=${encodeURIComponent('I just supported Aryansh! 💙 Join me: ' + window.location.origin)}`}
                             target="_blank"
                             rel="noreferrer"
                             whileHover={{ scale: 1.04 }}

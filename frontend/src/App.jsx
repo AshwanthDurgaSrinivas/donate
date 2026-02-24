@@ -40,7 +40,7 @@ function App() {
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.45, ease: 'easeInOut' }}
                         style={{ transformOrigin: 'left' }}
-                        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-primary via-blue-400 to-indigo-500 z-[999]"
+                        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-primary via-red-400 to-rose-500 z-[999]"
                     />
                 )}
             </AnimatePresence>

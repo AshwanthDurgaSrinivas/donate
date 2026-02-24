@@ -37,7 +37,7 @@ const Dashboard = () => {
                 <div className="text-center mb-16">
                     <h1 className="text-4xl font-black text-gray-900 mb-4 tracking-tight">Public Transparency Dashboard</h1>
                     <p className="text-gray-600 max-w-2xl mx-auto font-medium">
-                        Real-time tracking of every donation received toward Punarvika's Zolgensma fund.
+                        Real-time tracking of every donation received toward Aryansh's Zolgensma fund.
                         Our community's progress is updated instantly.
                     </p>
                 </div>

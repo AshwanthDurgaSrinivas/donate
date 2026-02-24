@@ -21,7 +21,7 @@ const getTier = (amount) => {
     };
     if (amount >= 10000) return {
         label: 'DIAMOND', Icon: Gem,
-        gradient: 'from-cyan-400 via-sky-400 to-blue-500',
+        gradient: 'from-orange-400 via-red-400 to-red-500',
         glow: 'rgba(34,211,238,0.35)',
         ring: 'border-cyan-400/40',
         badge: 'bg-cyan-400/15 text-cyan-300 border-cyan-400/30',
@@ -45,11 +45,11 @@ const getTier = (amount) => {
     };
     if (amount >= 100) return {
         label: 'SUPPORTER', Icon: Heart,
-        gradient: 'from-blue-400 via-indigo-400 to-violet-500',
+        gradient: 'from-red-400 via-rose-400 to-pink-500',
         glow: 'rgba(99,102,241,0.35)',
-        ring: 'border-indigo-400/40',
-        badge: 'bg-indigo-400/15 text-indigo-300 border-indigo-400/30',
-        amount_color: 'text-indigo-300',
+        ring: 'border-rose-400/40',
+        badge: 'bg-rose-400/15 text-rose-300 border-rose-400/30',
+        amount_color: 'text-rose-300',
     };
     return {
         label: 'BACKER', Icon: Leaf,
@@ -186,7 +186,7 @@ const LiveDashboard = () => {
         { Icon: Gem, label: '₹10K+', color: 'border-cyan-400/30' },
         { Icon: Medal, label: '₹5K+', color: 'border-orange-400/30' },
         { Icon: Star, label: '₹1K+', color: 'border-slate-300/30' },
-        { Icon: Heart, label: '₹100+', color: 'border-indigo-400/30' },
+        { Icon: Heart, label: '₹100+', color: 'border-rose-400/30' },
         { Icon: Leaf, label: '₹1+', color: 'border-emerald-400/30' },
     ];
 

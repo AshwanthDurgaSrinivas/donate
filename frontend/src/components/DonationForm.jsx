@@ -57,7 +57,7 @@ const DonationForm = () => {
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }} className="space-y-7">
                         <motion.span variants={fadeUp} className="badge">Make a Difference</motion.span>
                         <motion.h2 variants={fadeUp} className="text-4xl font-black text-white leading-tight">
-                            Your Contribution<br />Can <span className="gradient-text">Save Punarvika</span>
+                            Your Contribution<br />Can <span className="gradient-text">Save Aryansh</span>
                         </motion.h2>
                         <motion.p variants={fadeUp} className="text-white/50 text-lg leading-relaxed">
                             Each rupee counts towards the ₹16 Crore Zolgensma treatment. When thousands come together, impossible becomes possible.
@@ -74,10 +74,10 @@ const DonationForm = () => {
                         </motion.ul>
 
                         <motion.div variants={fadeUp} whileHover={{ scale: 1.02 }} className="relative rounded-[2rem] overflow-hidden shadow-card border border-white/10 max-w-xs">
-                            <img src={donorImg} alt="Donate for Punarvika" className="w-full object-cover" />
+                            <img src={donorImg} alt="Donate for Aryansh" className="w-full object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                             <div className="absolute bottom-5 left-5">
-                                <p className="text-white font-black text-lg">Save Punarvika 💙</p>
+                                <p className="text-white font-black text-lg">Save Aryansh 💙</p>
                                 <p className="text-white/60 text-xs">Every rupee brings her closer to life</p>
                             </div>
                         </motion.div>
@@ -87,7 +87,7 @@ const DonationForm = () => {
                     <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="relative group">
                         <div className="absolute -inset-1 rounded-[2.5rem] blur-2xl opacity-30 group-hover:opacity-50 transition-all duration-700"
-                            style={{ background: 'linear-gradient(135deg, rgba(59,130,246,0.4), rgba(99,102,241,0.3))' }} />
+                            style={{ background: 'linear-gradient(135deg, rgba(211,47,47,0.4), rgba(239,83,80,0.3))' }} />
                         <div className="relative glass-strong border border-white/10 p-8 md:p-10 rounded-[2.5rem]">
                             <form onSubmit={handleSubmit} className="space-y-5">
                                 <div className="grid grid-cols-2 gap-4">

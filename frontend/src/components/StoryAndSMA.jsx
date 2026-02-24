@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 const smaImg = new URL('../assets/sma.png', import.meta.url).href;
-const babyImg = new URL('../assets/images (3).jpeg', import.meta.url).href;
+const babyImg = new URL('../assets/aryansh-1.jpeg', import.meta.url).href;
 
 const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } };
 const fadeLeft = { hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } };
@@ -20,7 +20,7 @@ const StoryAndSMA = () => {
                     {/* SMA Image */}
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeLeft} className="relative group">
                         <div className="absolute -inset-3 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-60 transition-all duration-700"
-                            style={{ background: 'radial-gradient(ellipse, rgba(59,130,246,0.3) 0%, transparent 70%)' }} />
+                            style={{ background: 'radial-gradient(ellipse, rgba(211,47,47,0.3) 0%, transparent 70%)' }} />
                         <motion.img
                             src={smaImg}
                             alt="Zolgensma SMA Gene Therapy"
@@ -64,7 +64,7 @@ const StoryAndSMA = () => {
                 <div className="text-center mb-16 relative z-10">
                     <motion.span initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-[10px] font-black uppercase tracking-widest text-accent block mb-3">Our Story</motion.span>
                     <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-                        className="text-4xl font-black text-white">Punarvika's <span className="gradient-text-warm">Journey</span></motion.h2>
+                        className="text-4xl font-black text-white">Aryansh's <span className="gradient-text-warm">Journey</span></motion.h2>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -77,10 +77,10 @@ const StoryAndSMA = () => {
                         whileHover={{ rotate: 0, scale: 1.03 }}
                         className="glass-strong border border-white/10 p-4 pb-12 rounded-2xl shadow-card mx-auto max-w-xs cursor-pointer relative"
                     >
-                        <img src={babyImg} alt="Punarvika" className="w-full rounded-xl object-cover aspect-square" />
+                        <img src={babyImg} alt="Aryansh" className="w-full rounded-xl object-cover aspect-square" />
                         <p className="absolute bottom-4 left-0 right-0 text-center text-sm font-bold text-white/60 italic">Our little star 🌟</p>
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-white/20 shadow-lg"
-                            style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)' }} />
+                            style={{ background: 'linear-gradient(135deg, #d32f2f, #ff1744)' }} />
                     </motion.div>
 
                     {/* Story quotes */}
@@ -89,7 +89,7 @@ const StoryAndSMA = () => {
                         <motion.blockquote variants={fadeRight}
                             className="relative text-lg text-white/60 leading-relaxed italic border-l-4 border-primary/60 pl-6">
                             <span className="absolute -left-1 -top-2 text-primary/20 text-6xl font-serif leading-none">"</span>
-                            Punarvika was born as a ray of light. At 4 months, we noticed she wasn't moving her legs. After multiple tests, our world shattered — SMA Type 1.
+                            Aryansh was born as a ray of light. At 4 months, we noticed he wasn't moving his legs. After multiple tests, our world shattered — SMA Type 1.
                         </motion.blockquote>
                         <motion.blockquote variants={fadeRight}
                             className="relative text-lg text-white/60 leading-relaxed italic border-l-4 border-accent/60 pl-6">

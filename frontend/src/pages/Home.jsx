@@ -13,7 +13,7 @@ const Home = () => {
         <div className="page-bg">
             <HeroStats />
             <VideoSection />
-            <PhotoGallery />
+            {/* <PhotoGallery /> */}
             <StoryAndSMA />
             <WebsitePackage />
             <LiveDashboard />

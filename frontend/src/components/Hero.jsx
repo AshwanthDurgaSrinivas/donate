@@ -17,12 +17,12 @@ const Hero = () => {
                             Project: 500 Websites for Life
                         </span>
                         <h1 className="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-                            Help Save <span className="text-primary italic">Punarvika</span>
+                            Help Save <span className="text-primary italic">Aryansh</span>
                             <br />From SMA Type 1
                         </h1>
                         <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                             We are building 500 premium business websites for ₹10,000 each.
-                            100% of your payment goes directly to the treatment of Punarvika,
+                            100% of your payment goes directly to the treatment of Aryansh,
                             who needs a ₹16 Crore life-saving medicine.
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -56,7 +56,7 @@ const Hero = () => {
                         <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white">
                             <img
                                 src={heroImg}
-                                alt="Punarvika"
+                                alt="Aryansh"
                                 className="w-full h-auto object-cover"
                             />
                         </div>

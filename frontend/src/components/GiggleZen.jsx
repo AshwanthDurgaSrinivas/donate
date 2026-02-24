@@ -13,9 +13,9 @@ const stagger = {
 };
 
 const directors = [
-    { name: 'Cheedalla Gowtham', title: 'Director', initials: 'CG', gradient: 'from-blue-500 to-indigo-600' },
+    { name: 'Cheedalla Gowtham', title: 'Director', initials: 'CG', gradient: 'from-red-500 to-rose-600' },
     { name: 'Kothala Mukesh', title: 'Director', initials: 'KM', gradient: 'from-violet-500 to-purple-700' },
-    { name: 'Sukla Bhargav', title: 'Director', initials: 'SB', gradient: 'from-cyan-500 to-blue-600' },
+    { name: 'Sukla Bhargav', title: 'Director', initials: 'SB', gradient: 'from-orange-500 to-red-600' },
 ];
 
 const values = [
@@ -129,8 +129,8 @@ const GiggleZen = () => {
                 </motion.div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {[
-                        { icon: Target, label: 'Our Mission', color: 'bg-blue-500/20 text-blue-400', text: 'To empower businesses through technology, strategy, and execution — delivering measurable impact and long-term growth with innovation at the core.' },
-                        { icon: Globe, label: 'Our Vision', color: 'bg-indigo-500/20 text-indigo-400', text: 'To become a globally recognized leader in integrated IT, BPO, and Digital Marketing solutions — redefining excellence through trust, creativity, and technology.' }
+                        { icon: Target, label: 'Our Mission', color: 'bg-red-500/20 text-red-400', text: 'To empower businesses through technology, strategy, and execution — delivering measurable impact and long-term growth with innovation at the core.' },
+                        { icon: Globe, label: 'Our Vision', color: 'bg-rose-500/20 text-rose-400', text: 'To become a globally recognized leader in integrated IT, BPO, and Digital Marketing solutions — redefining excellence through trust, creativity, and technology.' }
                     ].map((item, i) => (
                         <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={revealVariant}
                             whileHover={{ scale: 1.02 }}
@@ -207,10 +207,10 @@ const GiggleZen = () => {
                 </motion.div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
                     {[
-                        { Icon: Code2, label: 'Web Development', sub: 'React, Node, Full-Stack', gradient: 'from-blue-500 to-indigo-600' },
+                        { Icon: Code2, label: 'Web Development', sub: 'React, Node, Full-Stack', gradient: 'from-red-500 to-rose-600' },
                         { Icon: Palette, label: 'UI/UX Design', sub: 'Figma, Glassmorphism, Motion', gradient: 'from-violet-500 to-purple-700' },
                         { Icon: Megaphone, label: 'Digital Marketing', sub: 'SEO, Ads, Social Media', gradient: 'from-pink-500 to-rose-600' },
-                        { Icon: Cpu, label: 'IT Solutions', sub: 'Automation, Cloud, DevOps', gradient: 'from-cyan-500 to-blue-600' },
+                        { Icon: Cpu, label: 'IT Solutions', sub: 'Automation, Cloud, DevOps', gradient: 'from-orange-500 to-red-600' },
                         { Icon: Headphones, label: 'BPO Services', sub: 'Support, CX, Back-office', gradient: 'from-amber-500 to-orange-600' },
                         { Icon: BarChart3, label: 'Analytics & Growth', sub: 'Data, Reports, Strategy', gradient: 'from-emerald-500 to-teal-600' },
                     ].map((s, i) => (
@@ -257,7 +257,7 @@ const GiggleZen = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                         <div>
-                            <p className="text-xl font-black text-white">GiggleZen <span className="text-blue-400">Technologies</span></p>
+                            <p className="text-xl font-black text-white">GiggleZen <span className="text-red-400">Technologies</span></p>
                             <p className="text-gray-500 text-sm mt-1">Enterprise IT, BPO &amp; Digital Marketing • Global Delivery</p>
                         </div>
                         <div className="flex flex-col md:flex-row gap-4 text-sm text-gray-400">

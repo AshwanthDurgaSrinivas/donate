@@ -49,6 +49,10 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => console.log('Client disconnected'));
 });
 
+app.get("/", (req, res) => {
+  res.send("Aryansh Backend Running...");
+});
+
 server.listen(PORT, () => {
   console.log(`Server with Socket.io & PG running on port ${PORT}`);
 });

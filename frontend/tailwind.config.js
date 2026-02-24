@@ -7,25 +7,25 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Primary palette — deep navy + electric blue
+                // Primary palette — deep black/red + crimson
                 navy: {
-                    950: '#020817',
-                    900: '#0a0f1e',
-                    800: '#0d1528',
-                    700: '#111d35',
-                    600: '#172141',
+                    950: '#000000',      // Deepest Black
+                    900: '#110000',      // Very Dark Red
+                    800: '#1a0000',      // Darker Red
+                    700: '#2a0000',      // Dark Red
+                    600: '#400000',      // Red tint
                 },
                 primary: {
-                    light: '#93c5fd',
-                    DEFAULT: '#3b82f6',
-                    dark: '#1d4ed8',
-                    glow: '#60a5fa',
+                    light: '#ff6666',
+                    DEFAULT: '#d32f2f',  // Crimson Red
+                    dark: '#b71c1c',     // Dark Crimson
+                    glow: '#ff4d4d',
                 },
                 accent: {
-                    DEFAULT: '#818cf8',   // soft indigo
-                    pink: '#f472b6',      // heart pink
-                    cyan: '#22d3ee',      // cyan highlight
-                    gold: '#fbbf24',      // gold tier
+                    DEFAULT: '#ef5350',   // Lighter red
+                    pink: '#ff1744',      // Bright red-pink
+                    cyan: '#ff8a80',      // Reddish-cyan alternative
+                    gold: '#fbbf24',      // gold tier (can stay for contrast)
                 },
                 glass: {
                     white: 'rgba(255,255,255,0.06)',

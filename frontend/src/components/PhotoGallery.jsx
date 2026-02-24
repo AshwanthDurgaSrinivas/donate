@@ -2,14 +2,18 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 
-const img2 = new URL('../assets/images (2).jpeg', import.meta.url).href;
-const img3 = new URL('../assets/images (3).jpeg', import.meta.url).href;
-const img5 = new URL('../assets/images (5).jpeg', import.meta.url).href;
+import img1 from '../assets/aryansh-1.jpeg';
+import img2 from '../assets/aryansh-2.jpeg';
+import img3 from '../assets/aryansh-3.jpeg';
+import img4 from '../assets/aryansh-4.jpeg';
+import img5 from '../assets/aryansh-5.jpeg';
 
 const photos = [
-    { src: img2, caption: "#SavePunarvika — A Mother's Hope", tag: 'Family' },
-    { src: img3, caption: 'Our Happy Little Star', tag: 'Joy' },
-    { src: img5, caption: "A Father's Love — Donate for Punarvika", tag: 'Father & Daughter' },
+    { src: img1, caption: 'Baby Aryansh — Our Little Fighter 💪', tag: 'Hope' },
+    { src: img3, caption: 'Aryansh in NICU — Fighting from Day 1', tag: 'Strength' },
+    { src: img4, caption: '#SaveAryansh — Fundraiser Campaign', tag: 'Campaign' },
+    { src: img2, caption: 'Gene Therapy Recommendation', tag: 'Medical' },
+    { src: img5, caption: 'OPD Summary — Rainbow Hospital', tag: 'Diagnosis' },
 ];
 
 const PhotoGallery = () => {
@@ -32,13 +36,13 @@ const PhotoGallery = () => {
                     viewport={{ once: true }} className="text-center mb-10">
                     <span className="badge mb-4 inline-flex">
                         <Heart className="w-3.5 h-3.5 mr-1.5" fill="currentColor" />
-                        Punarvika's World
+                        Aryansh's World
                     </span>
                     <h2 className="text-3xl sm:text-4xl font-black text-white mt-3">
                         Every <span className="gradient-text">Moment</span> Worth Fighting For
                     </h2>
                     <p className="text-white/35 mt-3 max-w-lg mx-auto text-sm">
-                        Glimpses of a little girl whose zest for life inspires thousands. Click to view full size.
+                        Glimpses of Aryansh's brave journey. Click to view full size.
                     </p>
                 </motion.div>
 

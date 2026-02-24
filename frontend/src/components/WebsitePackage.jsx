@@ -57,7 +57,7 @@ const WebsitePackage = () => {
                     </h2>
                     <p className="text-white/40 mt-4 max-w-xl mx-auto text-lg">
                         Get a <span className="text-white/70 font-semibold">premium 5-page business website</span> for just ₹10,000.
-                        100% of proceeds go directly to Punarvika's Zolgensma treatment.
+                        100% of proceeds go directly to Aryansh's Zolgensma treatment.
                     </p>
                 </motion.div>
 
@@ -66,7 +66,7 @@ const WebsitePackage = () => {
                     <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
                         className="relative group">
                         <div className="absolute -inset-1 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-700"
-                            style={{ background: 'linear-gradient(135deg, rgba(34,211,238,0.4), rgba(99,102,241,0.3))' }} />
+                            style={{ background: 'linear-gradient(135deg, rgba(239,83,80,0.4), rgba(211,47,47,0.3))' }} />
                         <div className="relative glass-strong border border-white/10 rounded-[2.5rem] p-8 md:p-10">
                             <div className="flex items-end space-x-2 mb-8">
                                 <span className="text-5xl font-black text-white">₹10,000</span>
@@ -79,7 +79,7 @@ const WebsitePackage = () => {
                                         transition={{ delay: i * 0.08 }}
                                         className="flex items-center space-x-3 group/item">
                                         <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover/item:scale-110"
-                                            style={{ background: 'linear-gradient(135deg, rgba(34,211,238,0.2), rgba(59,130,246,0.2))', border: '1px solid rgba(34,211,238,0.2)' }}>
+                                            style={{ background: 'linear-gradient(135deg, rgba(239,83,80,0.2), rgba(211,47,47,0.2))', border: '1px solid rgba(239,83,80,0.2)' }}>
                                             <f.icon className="w-4 h-4 text-accent-cyan" />
                                         </div>
                                         <span className="text-white/70 font-medium">{f.label}</span>
@@ -97,7 +97,7 @@ const WebsitePackage = () => {
                     <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
                         className="relative group">
                         <div className="absolute -inset-1 rounded-[2.5rem] blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-700"
-                            style={{ background: 'linear-gradient(135deg, rgba(59,130,246,0.4), rgba(129,140,248,0.3))' }} />
+                            style={{ background: 'linear-gradient(135deg, rgba(211,47,47,0.4), rgba(239,83,80,0.3))' }} />
                         <div className="relative glass-strong border border-white/10 rounded-[2.5rem] p-8 md:p-10">
                             <AnimatePresence mode="wait">
                                 {submitted ? (
@@ -137,7 +137,7 @@ const WebsitePackage = () => {
                                             whileHover={{ scale: 1.02, boxShadow: '0 0 40px rgba(34,211,238,0.4)' }}
                                             whileTap={{ scale: 0.97 }}
                                             className="w-full py-4 rounded-2xl font-black text-white text-lg flex items-center justify-center space-x-2 transition-all disabled:opacity-60"
-                                            style={{ background: 'linear-gradient(135deg, #22d3ee, #3b82f6)', boxShadow: '0 8px 30px rgba(34,211,238,0.25)' }}>
+                                            style={{ background: 'linear-gradient(135deg, #ef5350, #d32f2f)', boxShadow: '0 8px 30px rgba(239,83,80,0.25)' }}>
                                             {submitting
                                                 ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                                                 : <><Send className="w-5 h-5" /><span>Book Now — Save a Life</span></>

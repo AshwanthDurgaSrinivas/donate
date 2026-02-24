@@ -161,7 +161,7 @@ const Admin = () => {
             {/* Sidebar */}
             <aside className="w-64 bg-white border-r border-gray-100 hidden lg:block h-screen sticky top-0">
                 <div className="p-6">
-                    <h2 className="text-xl font-bold text-primary italic underline uppercase tracking-tighter">Punarvika Admin</h2>
+                    <h2 className="text-xl font-bold text-primary italic underline uppercase tracking-tighter">Aryansh Admin</h2>
                 </div>
                 <nav className="mt-6 px-4 space-y-2">
                     <button
@@ -218,7 +218,7 @@ const Admin = () => {
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <p className="text-gray-500 text-sm mb-1">Total Donors</p>
-                        <h3 className="text-2xl font-bold text-blue-600">{(data.stats?.total_donors || 0)}</h3>
+                        <h3 className="text-2xl font-bold text-red-600">{(data.stats?.total_donors || 0)}</h3>
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <p className="text-gray-500 text-sm mb-1">Websites Sold</p>
@@ -304,7 +304,7 @@ const Admin = () => {
                                             <p className="text-gray-600 line-clamp-1 italic">{lead.message || 'No message'}</p>
                                         </td>
                                         <td className="px-6 py-4">
-                                            <span className={`px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest ${lead.status === 'completed' ? 'bg-green-100 text-green-700' : 'bg-blue-50 text-blue-600'}`}>
+                                            <span className={`px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-widest ${lead.status === 'completed' ? 'bg-green-100 text-green-700' : 'bg-red-50 text-red-600'}`}>
                                                 {lead.status || 'New'}
                                             </span>
                                         </td>
@@ -328,7 +328,7 @@ const Admin = () => {
                                                 </a>
                                                 <a
                                                     href={`mailto:${lead.email}`}
-                                                    className="p-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition"
+                                                    className="p-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition"
                                                     title="Email Lead"
                                                 >
                                                     <Mail className="w-4 h-4" />

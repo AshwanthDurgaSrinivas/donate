@@ -6,13 +6,13 @@
 
 /* ─── Design Tokens ─────────────────────────────── */
 :root {
-  --navy-950: #020817;
-  --navy-900: #0a0f1e;
-  --navy-800: #0d1528;
-  --primary: #3b82f6;
-  --primary-glow: rgba(59, 130, 246, 0.35);
-  --accent: #818cf8;
-  --accent-cyan: #22d3ee;
+  --navy-950: #000000;
+  --navy-900: #110000;
+  --navy-800: #1a0000;
+  --primary: #d32f2f;
+  --primary-glow: rgba(211, 47, 47, 0.35);
+  --accent: #ef5350;
+  --accent-cyan: #ff8a80;
   --glass-bg: rgba(255, 255, 255, 0.055);
   --glass-border: rgba(255, 255, 255, 0.10);
   --glass-hover: rgba(255, 255, 255, 0.10);
@@ -88,29 +88,29 @@ body {
 .glass-hover:hover {
   background: var(--glass-hover);
   border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 40px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 8px 40px rgba(211, 47, 47, 0.15);
 }
 
 /* ─── Glow Effects ─────────────────────────────── */
 .glow-blue {
-  box-shadow: 0 0 30px var(--primary-glow), 0 0 80px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 30px var(--primary-glow), 0 0 80px rgba(211, 47, 47, 0.15);
 }
 
 .glow-accent {
-  box-shadow: 0 0 30px rgba(129, 140, 248, 0.4), 0 0 80px rgba(129, 140, 248, 0.15);
+  box-shadow: 0 0 30px rgba(239, 83, 80, 0.4), 0 0 80px rgba(239, 83, 80, 0.15);
 }
 
 .text-glow {
-  text-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.3);
+  text-shadow: 0 0 30px rgba(211, 47, 47, 0.6), 0 0 60px rgba(211, 47, 47, 0.3);
 }
 
 .text-glow-accent {
-  text-shadow: 0 0 30px rgba(129, 140, 248, 0.6);
+  text-shadow: 0 0 30px rgba(239, 83, 80, 0.6);
 }
 
 /* ─── Gradient Text ────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #22d3ee 100%);
+  background: linear-gradient(135deg, #ff4d4d 0%, #ef5350 50%, #ff8a80 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -133,19 +133,19 @@ body {
 }
 
 .orb-blue {
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(211, 47, 47, 0.35) 0%, transparent 70%);
 }
 
 .orb-indigo {
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(239, 83, 80, 0.3) 0%, transparent 70%);
 }
 
 .orb-cyan {
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 138, 128, 0.25) 0%, transparent 70%);
 }
 
 .orb-pink {
-  background: radial-gradient(circle, rgba(244, 114, 182, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 23, 68, 0.25) 0%, transparent 70%);
 }
 
 /* ─── Page Layout ───────────────────────────────── */
@@ -164,18 +164,18 @@ body {
 }
 
 .card:hover {
-  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 20px 60px rgba(211, 47, 47, 0.15);
 }
 
 /* ─── Buttons ───────────────────────────────────── */
 .btn-primary {
   @apply inline-flex items-center justify-center px-7 py-3.5 rounded-2xl font-bold text-white transition-all duration-300;
-  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.35);
+  background: linear-gradient(135deg, #d32f2f 0%, #ff1744 100%);
+  box-shadow: 0 8px 30px rgba(211, 47, 47, 0.35);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.55);
+  box-shadow: 0 12px 40px rgba(211, 47, 47, 0.55);
   transform: translateY(-2px) scale(1.02);
 }
 
@@ -189,12 +189,12 @@ body {
 
 /* ─── Input fields ───────────────────────────────── */
 .input-glass {
-  @apply glass w-full px-4 py-3 rounded-xl text-white placeholder-white/30 outline-none transition-all duration-300;
+  @apply glass w-full pr-4 pl-4 py-3 rounded-xl text-white placeholder-white/30 outline-none transition-all duration-300;
 }
 
 .input-glass:focus {
-  border-color: rgba(59, 130, 246, 0.5);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  border-color: rgba(211, 47, 47, 0.5);
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
 }
 
 /* ─── Badge / pill ───────────────────────────────── */
@@ -210,8 +210,8 @@ body {
 
 .progress-fill {
   @apply h-full rounded-full relative overflow-hidden;
-  background: linear-gradient(90deg, #3b82f6, #6366f1, #22d3ee);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  background: linear-gradient(90deg, #d32f2f, #ef5350, #ff8a80);
+  box-shadow: 0 0 20px rgba(211, 47, 47, 0.5);
 }
 
 .progress-fill::after {

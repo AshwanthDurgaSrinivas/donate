@@ -22,7 +22,7 @@ const ProgressStats = ({ totalRaised = 4500000, target = 160000000, websitesSold
                     </div>
                 </div>
 
-                <div className="bg-white p-8 rounded-3xl shadow-lg border border-blue-100">
+                <div className="bg-white p-8 rounded-3xl shadow-lg border border-red-100">
                     <div className="flex justify-between items-end mb-4">
                         <div>
                             <p className="text-gray-600 font-medium">Fundraising Progress</p>

@@ -37,7 +37,7 @@ const auth = (req, res, next) => {
 // Admin login
 router.post('/login', (req, res) => {
     const { password } = req.body;
-    if (password === (process.env.ADMIN_PASSWORD || 'punarvika_admin_2024')) {
+    if (password === (process.env.ADMIN_PASSWORD || 'aryansh_admin_2024')) {
         const token = jwt.sign({ role: 'admin' }, process.env.JWT_SECRET, { expiresIn: '1d' });
         res.json({ token });
     } else {

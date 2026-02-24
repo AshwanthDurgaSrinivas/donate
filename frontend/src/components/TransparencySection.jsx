@@ -5,7 +5,7 @@ import { FileText, Download, ShieldCheck, BadgeCheck, Lock, Building2 } from 'lu
 const trustBadges = [
     { icon: ShieldCheck, label: 'Hospital Verified', sub: 'Original documents on file' },
     { icon: BadgeCheck, label: 'Cashfree Secured', sub: '100% payment protection' },
-    { icon: Lock, label: 'No Hidden Fees', sub: 'Every rupee to Punarvika' },
+    { icon: Lock, label: 'No Hidden Fees', sub: 'Every rupee to Aryansh' },
     { icon: Building2, label: 'Registered Trust', sub: 'Legally verified entity' },
 ];
 
@@ -38,7 +38,7 @@ const TransparencySection = () => {
     };
 
     return (
-        <section id="transparency" className="py-20 bg-gradient-to-b from-white to-blue-950">
+        <section id="transparency" className="py-20 bg-gradient-to-b from-white to-red-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
@@ -49,7 +49,7 @@ const TransparencySection = () => {
                     variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
                     className="text-center mb-16"
                 >
-                    <motion.span variants={revealVariant} className="inline-flex items-center space-x-2 bg-blue-100 text-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-6">
+                    <motion.span variants={revealVariant} className="inline-flex items-center space-x-2 bg-red-100 text-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-6">
                         <ShieldCheck className="w-4 h-4" />
                         <span>Transparency Hub</span>
                     </motion.span>
@@ -94,29 +94,29 @@ const TransparencySection = () => {
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.2 }}
                     variants={revealVariant}
-                    className="bg-gradient-to-br from-blue-900 to-indigo-950 rounded-[3rem] p-8 lg:p-14 text-white overflow-hidden relative"
+                    className="bg-gradient-to-br from-red-900 to-rose-950 rounded-[3rem] p-8 lg:p-14 text-white overflow-hidden relative"
                 >
                     {/* Decorative orb */}
                     <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full blur-3xl -mr-40 -mt-40 pointer-events-none" />
-                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl -ml-32 -mb-32 pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-red-400/10 rounded-full blur-3xl -ml-32 -mb-32 pointer-events-none" />
 
                     <div className="relative z-10">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
                             <div>
-                                <div className="flex items-center space-x-2 text-blue-300 mb-3">
+                                <div className="flex items-center space-x-2 text-red-300 mb-3">
                                     <FileText className="w-5 h-5" />
                                     <span className="font-bold text-sm uppercase tracking-widest">Official Documents</span>
                                 </div>
                                 <h3 className="text-3xl font-black">Hospital Bills & Trust Records</h3>
-                                <p className="text-blue-200 mt-2 max-w-md">All documents are uploaded by the admin and publicly accessible. Download and verify anytime.</p>
+                                <p className="text-red-200 mt-2 max-w-md">All documents are uploaded by the admin and publicly accessible. Download and verify anytime.</p>
                             </div>
                         </div>
 
                         {reports.length === 0 ? (
                             <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-12 text-center">
-                                <FileText className="w-10 h-10 text-blue-300 mx-auto mb-4" />
-                                <p className="text-blue-200 font-medium">No documents uploaded yet.</p>
-                                <p className="text-blue-300/60 text-sm mt-1">Hospital bills and trust documents will appear here once uploaded by the admin.</p>
+                                <FileText className="w-10 h-10 text-red-300 mx-auto mb-4" />
+                                <p className="text-red-200 font-medium">No documents uploaded yet.</p>
+                                <p className="text-red-300/60 text-sm mt-1">Hospital bills and trust documents will appear here once uploaded by the admin.</p>
                             </div>
                         ) : (
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -138,13 +138,13 @@ const TransparencySection = () => {
                                                 </div>
                                                 <div>
                                                     <h4 className="font-bold text-white">{report.title}</h4>
-                                                    <p className="text-xs text-blue-300 mt-0.5">
+                                                    <p className="text-xs text-red-300 mt-0.5">
                                                         {new Date(report.created_at).toLocaleDateString('en-IN', { month: 'short', day: '2-digit', year: 'numeric' })}
                                                     </p>
                                                 </div>
                                             </div>
                                             <motion.div whileHover={{ scale: 1.2 }}>
-                                                <Download className="w-5 h-5 text-blue-300 group-hover:text-white transition" />
+                                                <Download className="w-5 h-5 text-red-300 group-hover:text-white transition" />
                                             </motion.div>
                                         </div>
                                     </motion.div>

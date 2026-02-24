@@ -38,12 +38,12 @@ const Navbar = () => {
                                 whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                                 transition={{ duration: 0.5 }}
                                 className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0"
-                                style={{ background: 'linear-gradient(135deg, #3b82f6, #6366f1)', boxShadow: '0 8px 20px rgba(59, 130, 246, 0.4)' }}
+                                style={{ background: 'linear-gradient(135deg, #d32f2f, #ff1744)', boxShadow: '0 8px 20px rgba(211, 47, 47, 0.4)' }}
                             >
                                 <Heart className="w-5 h-5 text-white" fill="currentColor" />
                             </motion.div>
                             <div className="flex flex-col">
-                                <span className="font-black text-xl text-white tracking-tighter leading-tight">punarvika</span>
+                                <span className="font-black text-xl text-white tracking-tighter leading-tight">aryansh</span>
                                 <span className="text-[10px] text-white/50 font-semibold tracking-tight leading-none">by GiggleZen Technologies</span>
                             </div>
                         </Link>

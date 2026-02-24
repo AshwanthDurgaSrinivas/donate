@@ -91,7 +91,7 @@ const HeroStats = () => {
                         <motion.div variants={fadeUp}>
                             <span className="badge">
                                 <span className="live-dot" />
-                                <span>Live Fundraiser — Save Punarvika</span>
+                                <span>Live Fundraiser — Save Aryansh</span>
                             </span>
                         </motion.div>
 
@@ -105,7 +105,7 @@ const HeroStats = () => {
                         </motion.h1>
 
                         <motion.p variants={fadeUp} className="text-base sm:text-lg text-white/50 leading-relaxed max-w-lg">
-                            Punarvika is fighting SMA Type 1. Help us reach the{' '}
+                            Aryansh is fighting SMA Type 1. Help us reach the{' '}
                             <span className="text-primary font-bold">₹16 Crore</span> Zolgensma goal.
                             Donations start from just <span className="text-emerald-400 font-bold">₹1</span>.
                         </motion.p>
@@ -127,7 +127,7 @@ const HeroStats = () => {
                         {/* Progress */}
                         <motion.div variants={fadeUp} className="glass rounded-2xl p-4 max-w-lg">
                             <div className="flex justify-between items-center mb-2">
-                                <span className="text-white/40 text-[9px] font-black uppercase tracking-widest">Progress to Goal</span>
+                                <span className="text-white/40 text-[9px] font-black uppercase tracking-widest">Zolgensma Fund Progress</span>
                                 <span className="text-primary text-xs font-black">{pct.toFixed(2)}%</span>
                             </div>
                             <div className="progress-track">
@@ -147,18 +147,18 @@ const HeroStats = () => {
                     >
                         {/* Glow halo */}
                         <div className="absolute -inset-2 rounded-[2.5rem] blur-3xl opacity-20 group-hover:opacity-35 transition-all duration-700 pointer-events-none"
-                            style={{ background: 'linear-gradient(135deg, rgba(59,130,246,0.5), rgba(99,102,241,0.4))' }} />
+                            style={{ background: 'linear-gradient(135deg, rgba(211,47,47,0.5), rgba(239,83,80,0.4))' }} />
 
                         <div className="relative glass-strong border border-white/10 rounded-[2.5rem] p-6 sm:p-8">
                             {/* Card header */}
                             <div className="flex items-center space-x-3 mb-6">
                                 <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                    style={{ background: 'linear-gradient(135deg,#3b82f6,#6366f1)' }}>
+                                    style={{ background: 'linear-gradient(135deg,#d32f2f,#ff1744)' }}>
                                     <Heart className="w-5 h-5 text-white" fill="currentColor" />
                                 </div>
                                 <div>
                                     <h2 className="font-black text-white text-lg leading-tight">Donate Now</h2>
-                                    <p className="text-white/35 text-xs">100% goes to Punarvika's treatment</p>
+                                    <p className="text-white/35 text-xs">100% goes to Aryansh's Zolgensma gene therapy</p>
                                 </div>
                             </div>
 
@@ -172,7 +172,7 @@ const HeroStats = () => {
                                                 whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.93 }}
                                                 onClick={() => { playClick(); setAmount(p.toString()); }}
                                                 className={`py-2.5 rounded-xl text-sm font-bold border transition-all ${amount === p.toString()
-                                                    ? 'border-primary bg-primary/20 text-primary shadow-[0_0_15px_rgba(59,130,246,0.3)]'
+                                                    ? 'border-primary bg-primary/20 text-primary shadow-[0_0_15px_rgba(211,47,47,0.3)]'
                                                     : 'glass border-white/08 text-white/50 hover:border-primary/40 hover:text-white/80'
                                                     }`}>
                                                 ₹{p >= 1000 ? `${p / 1000}K` : p}
@@ -183,9 +183,9 @@ const HeroStats = () => {
 
                                 {/* Custom amount */}
                                 <div className="relative">
-                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 font-black text-white/30 text-xl pointer-events-none">₹</span>
+                                    <span className="absolute left-4 top-1/2 -translate-y-1/2 font-black text-white/50 text-xl pointer-events-none">₹</span>
                                     <input type="number" min="1" required placeholder="Enter amount"
-                                        className="input-glass pl-10 text-xl font-black h-14"
+                                        className="input-glass text-xl font-black h-14" style={{ paddingLeft: '3rem' }}
                                         value={amount} onChange={e => setAmount(e.target.value)} />
                                 </div>
 
@@ -202,14 +202,14 @@ const HeroStats = () => {
                                         <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.3 }} className="overflow-hidden space-y-3">
                                             <div className="relative">
-                                                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/25" />
+                                                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
                                                 <input type="text" placeholder="Your Name" required={!anon}
-                                                    className="input-glass pl-10" value={name} onChange={e => setName(e.target.value)} />
+                                                    className="input-glass" style={{ paddingLeft: '3rem' }} value={name} onChange={e => setName(e.target.value)} />
                                             </div>
                                             <div className="relative">
-                                                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/25" />
+                                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50" />
                                                 <input type="email" placeholder="Email (for receipt)" required={!anon}
-                                                    className="input-glass pl-10" value={email} onChange={e => setEmail(e.target.value)} />
+                                                    className="input-glass" style={{ paddingLeft: '3rem' }} value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
                                         </motion.div>
                                     )}
@@ -217,7 +217,7 @@ const HeroStats = () => {
 
                                 {/* Submit */}
                                 <motion.button type="submit" disabled={loading}
-                                    whileHover={{ scale: 1.02, boxShadow: '0 0 50px rgba(59,130,246,0.6)' }}
+                                    whileHover={{ scale: 1.02, boxShadow: '0 0 50px rgba(211,47,47,0.6)' }}
                                     whileTap={{ scale: 0.97 }}
                                     className="btn-primary w-full py-4 text-lg disabled:opacity-60 disabled:cursor-not-allowed">
                                     {loading

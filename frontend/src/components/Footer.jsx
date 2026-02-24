@@ -13,7 +13,7 @@ const Footer = () => {
         ],
         'About': [
             { label: 'About GiggleZen', href: '/#about' },
-            { label: "Punarvika's Story", href: '/#story' },
+            { label: "Aryansh's Story", href: '/#story' },
             { label: 'SMA Disease', href: '/#sma' },
             { label: 'FAQ', href: '/#faq' },
         ],
@@ -31,16 +31,16 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-2 space-y-6">
                         <div className="flex items-center space-x-3">
-                            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg,#3b82f6,#6366f1)' }}>
+                            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg,#d32f2f,#ff1744)' }}>
                                 <Heart className="w-5 h-5 text-white" fill="currentColor" />
                             </div>
                             <div>
-                                <span className="font-black text-xl text-white">punarvika</span>
+                                <span className="font-black text-xl text-white">aryansh</span>
                                 <span className="font-black text-xl text-primary">.in</span>
                             </div>
                         </div>
                         <p className="text-white/40 text-sm leading-relaxed max-w-sm">
-                            A community initiative by GiggleZen Technologies Pvt. Ltd. to raise funds for Punarvika's life-saving Zolgensma treatment through technology and collective kindness.
+                            A community initiative by GiggleZen Technologies Pvt. Ltd. to raise funds for Aryansh's life-saving Zolgensma treatment through technology and collective kindness.
                         </p>
                         <div className="flex items-center space-x-3">
                             {[{ icon: Twitter }, { icon: Linkedin }, { icon: Instagram }].map((s, i) => (
@@ -53,7 +53,7 @@ const Footer = () => {
                         <div className="space-y-3 text-sm text-white/40">
                             <div className="flex items-center space-x-2"><MapPin className="w-4 h-4 text-primary flex-shrink-0" /><span>2nd Floor, 100 Feet Road, Madhapur, Hyderabad 500081</span></div>
                             <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-primary flex-shrink-0" /><a href="tel:+917842238773" className="hover:text-white transition">+91-7842238773</a></div>
-                            <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-primary flex-shrink-0" /><a href="mailto:support@punarvika.in" className="hover:text-white transition">support@punarvika.in</a></div>
+                            <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-primary flex-shrink-0" /><a href="mailto:support@aryansh.in" className="hover:text-white transition">support@aryansh.in</a></div>
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@ const Footer = () => {
                     <div className="flex" style={{ animation: 'ticker 30s linear infinite', width: '200%' }}>
                         {[...Array(8)].map((_, i) => (
                             <span key={i} className="text-white/10 text-xs font-black uppercase tracking-widest mr-8 flex-shrink-0">
-                                💙 Save Punarvika &nbsp;•&nbsp; ₹16 Crore Goal &nbsp;•&nbsp; 500 Websites Initiative &nbsp;•&nbsp; GiggleZen Technologies &nbsp;•&nbsp;
+                                💙 Save Aryansh &nbsp;•&nbsp; ₹16 Crore Goal &nbsp;•&nbsp; 500 Websites Initiative &nbsp;•&nbsp; GiggleZen Technologies &nbsp;•&nbsp;
                             </span>
                         ))}
                     </div>
