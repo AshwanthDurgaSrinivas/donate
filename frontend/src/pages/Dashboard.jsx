@@ -54,7 +54,7 @@ const Dashboard = () => {
                         <div className="stars opacity-30" />
                     </div>
 
-                    <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+                    {/* <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
                         <div>
                             <div className="badge mb-3">Analytics</div>
                             <h3 className="text-3xl font-black text-white tracking-tight">Donation <span className="gradient-text">Momentum</span></h3>
@@ -66,15 +66,15 @@ const Dashboard = () => {
                                     key={r}
                                     onClick={() => setRange(r)}
                                     className={`px-5 py-2.5 rounded-xl text-xs font-black transition-all uppercase tracking-widest ${range === r ? 'bg-primary text-white shadow-lg glow-blue' : 'text-white/40 hover:text-white/60'
-                                        }`}
+                                    }`}
                                 >
                                     {r} Days
                                 </button>
                             ))}
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className="relative h-80 flex items-end justify-between px-4 md:px-10 border-b border-white/5 pb-6">
+                    {/* <div className="relative h-80 flex items-end justify-between px-4 md:px-10 border-b border-white/5 pb-6">
                         {chartData.map((d, i) => {
                             // Give more weight to non-zero values so they are visible even if small
                             const rawHeight = (Number(d.total) / maxVal) * 100;
@@ -93,7 +93,7 @@ const Dashboard = () => {
                                                 }`}
                                         >
                                             <div className="absolute -top-14 left-1/2 -translate-x-1/2 bg-white text-gray-900 text-[11px] font-black py-2.5 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 whitespace-nowrap shadow-2xl z-20 border border-white/20">
-                                                ₹{Number(d.total).toLocaleString()}
+                                                ₹{Number(d.total).toLocaleString('en-IN')}
                                                 <div className="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-white"></div>
                                             </div>
                                         </motion.div>
@@ -106,6 +106,7 @@ const Dashboard = () => {
                     {dailyData.length === 0 && (
                         <p className="text-center text-xs font-black text-white/20 mt-8 tracking-widest uppercase italic">Awaiting more community contributions...</p>
                     )}
+                */}
                 </div>
 
                 <div className="mt-12">
@@ -115,5 +116,6 @@ const Dashboard = () => {
         </div>
     );
 };
+
 
 export default Dashboard;

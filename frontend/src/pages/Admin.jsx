@@ -214,7 +214,7 @@ const Admin = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <p className="text-gray-500 text-sm mb-1">Total Raised</p>
-                        <h3 className="text-2xl font-bold text-green-600">₹{(data.stats?.total_raised || 0).toLocaleString()}</h3>
+                        <h3 className="text-2xl font-bold text-green-600">₹{(data.stats?.total_raised || 0).toLocaleString('en-IN')}</h3>
                     </div>
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <p className="text-gray-500 text-sm mb-1">Total Donors</p>
@@ -227,7 +227,7 @@ const Admin = () => {
                     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <p className="text-gray-500 text-sm mb-1">Target Remaining</p>
                         <h3 className="text-2xl font-bold text-orange-500">
-                            ₹{((data.stats?.target_amount || 16000000) - (data.stats?.total_raised || 0)).toLocaleString()}
+                            ₹{((data.stats?.target_amount || 16000000) - (data.stats?.total_raised || 0)).toLocaleString('en-IN')}
                         </h3>
                     </div>
                 </div>
@@ -252,7 +252,7 @@ const Admin = () => {
                                             <div className="font-semibold">{d.is_anonymous ? 'Anonymous' : d.donor_name}</div>
                                             <div className="text-xs text-gray-400">{d.email}</div>
                                         </td>
-                                        <td className="px-6 py-4 font-bold text-gray-900">₹{d.amount.toLocaleString()}</td>
+                                        <td className="px-6 py-4 font-bold text-gray-900">₹{d.amount.toLocaleString('en-IN')}</td>
                                         <td className="px-6 py-4">
                                             <span className={`px-2 py-1 rounded-full text-[10px] font-bold uppercase ${d.status === 'success' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'}`}>
                                                 {d.status}

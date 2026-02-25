@@ -115,7 +115,7 @@ const DonationCard = ({ donation, isNew }) => {
                         transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                         className={`font-black text-lg ${tier.amount_color}`}
                     >
-                        ₹{Number(donation.amount).toLocaleString()}
+                        ₹{Number(donation.amount).toLocaleString('en-IN')}
                     </motion.p>
                     <div className="flex items-center justify-end space-x-1 text-white/30 text-[10px]">
                         <Clock className="w-2.5 h-2.5" />
@@ -220,7 +220,7 @@ const LiveDashboard = () => {
                             </p>
                             <motion.p key={totalToday} initial={{ scale: 1.2, color: '#4ade80' }} animate={{ scale: 1, color: '#f1f5f9' }}
                                 transition={{ duration: 0.4 }} className="text-3xl font-black text-white">
-                                <span className="text-primary">₹</span>{totalToday.toLocaleString()}
+                                <span className="text-primary">₹</span>{totalToday.toLocaleString('en-IN')}
                             </motion.p>
                         </motion.div>
                     </div>

@@ -35,8 +35,8 @@ router.get('/stats', async (req, res) => {
         `);
 
         const stats = result.rows[0];
-        // Ensure we always have a target amount (default 16Cr)
-        if (!stats.target_amount) stats.target_amount = 160000000;
+        // Ensure we always have a target amount (default ₹1.6 Cr = 16,000,000)
+        if (!stats.target_amount) stats.target_amount = 16000000;
 
         res.json(stats);
     } catch (error) {

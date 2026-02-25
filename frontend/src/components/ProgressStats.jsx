@@ -3,6 +3,14 @@ import { motion } from 'framer-motion';
 
 const ProgressStats = ({ totalRaised = 4500000, target = 16000000, websitesSold = 45 }) => {
     const percentage = (totalRaised / target) * 100;
+    // when the fundraiser has just begun the raw value is extremely small;
+    // toFixed(1) will render 0.0 which confused users. compute a display
+    // string that shows "<0.1" instead of a misleading 0.0, and make sure
+    // the bar still gets a tiny minimum width so you can see progress.
+    const displayPct = percentage > 0 && percentage < 0.1 ? '<0.1' : percentage.toFixed(2);
+    // clamp width so the fill div isn't entirely hidden when percentage is
+    // non‑zero but very small
+    const barWidth = percentage > 0 && percentage < 0.1 ? '0.1%' : `${percentage}%`;
 
     return (
         <section className="page-bg relative py-12">
@@ -12,7 +20,7 @@ const ProgressStats = ({ totalRaised = 4500000, target = 16000000, websitesSold 
             </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 text-center">
-                    <div className="glass p-6 rounded-2xl shadow-sm border border-white/5">
+                    {/* <div className="glass p-6 rounded-2xl shadow-sm border border-white/5">
                         <h3 className="text-white/60 text-xs font-black uppercase tracking-widest">Total Raised</h3>
                         <p className="text-4xl font-black text-primary mt-2">₹{(totalRaised / 10000000).toFixed(2)} Cr</p>
                     </div>
@@ -23,22 +31,22 @@ const ProgressStats = ({ totalRaised = 4500000, target = 16000000, websitesSold 
                     <div className="glass p-6 rounded-2xl shadow-sm border border-white/5">
                         <h3 className="text-white/60 text-xs font-black uppercase tracking-widest">Remaining</h3>
                         <p className="text-4xl font-black text-accent mt-2">₹{((target - totalRaised) / 10000000).toFixed(2)} Cr</p>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="glass-strong p-8 rounded-3xl border border-white/10">
                     <div className="flex justify-between items-end mb-4">
                         <div>
                             <p className="text-white/60 text-xs font-black uppercase tracking-widest mb-1">Fundraising Progress</p>
-                            <h2 className="text-2xl font-black text-white">₹{totalRaised.toLocaleString()} raised of ₹{target.toLocaleString()}</h2>
+                            <h2 className="text-2xl font-black text-white">₹{totalRaised.toLocaleString('en-IN')} raised of ₹{target.toLocaleString('en-IN')}</h2>
                         </div>
-                        <p className="text-primary font-black text-2xl tracking-tighter">{percentage.toFixed(1)}%</p>
+                        <p className="text-primary font-black text-2xl tracking-tighter">{displayPct}%</p>
                     </div>
 
                     <div className="progress-track h-4 rounded-xl">
                         <motion.div
                             initial={{ width: 0 }}
-                            animate={{ width: `${percentage}%` }}
+                            animate={{ width: barWidth }}
                             transition={{ duration: 1.5, ease: "easeOut" }}
                             className="progress-fill"
                         />

@@ -235,7 +235,7 @@ const HeroStats = () => {
                                             ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                                             : <>
                                                 <motion.span animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1.2, repeat: Infinity }}>❤️</motion.span>
-                                                <span className="ml-2">DONATE {amount ? `₹${Number(amount).toLocaleString()}` : 'NOW'}</span>
+                                                <span className="ml-2">DONATE {amount ? `₹${Number(amount).toLocaleString('en-IN')}` : 'NOW'}</span>
                                             </>
                                         }
                                     </motion.button>
